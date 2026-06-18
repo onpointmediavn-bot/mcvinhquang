@@ -30,7 +30,7 @@ export default function EntryChamber() {
   };
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-obsidian flex flex-col justify-between p-6 md:p-12 border-b border-charcoal blueprint-grid">
+    <section className="relative md:h-screen min-h-[400px] w-full overflow-hidden bg-obsidian flex flex-col justify-between pt-4 pb-4 px-6 md:p-12 border-b border-charcoal blueprint-grid">
       {/* Hero Background Image (faded on desktop, visible on mobile) */}
       {siteConfig.hero.backgroundImage && (
         <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden lg:opacity-10">
@@ -65,24 +65,24 @@ export default function EntryChamber() {
       </div>
 
       {/* Header Telemetry */}
-      <div className="relative z-10 w-full flex justify-between items-center border-b border-charcoal/50 pb-4">
+      <div className="relative z-10 w-full flex justify-between items-center border-b border-charcoal/50 pb-3 md:pb-4">
         <div className="flex items-center space-x-3">
           <div className="relative">
             <span className="absolute inline-flex h-2 w-2 rounded-full bg-gold animate-ping"></span>
             <span className="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
           </div>
-          <span className="font-mono text-xs text-gold tracking-widest uppercase">
+          <span className="font-mono text-[9px] md:text-xs text-gold tracking-widest uppercase">
             SYSTEM STATUS: ENGAGED
           </span>
         </div>
-        <div className="font-mono text-xs text-platinum/50 flex space-x-6">
+        <div className="font-mono text-[9px] md:text-xs text-platinum/50 flex space-x-6">
           <span className="hidden md:inline">LOC: HN_VN</span>
           <span>SYS_VER: 2026.1</span>
         </div>
       </div>
 
       {/* Centerpiece Split Engine */}
-      <div className="relative z-10 my-auto w-full max-w-7xl mx-auto grid grid-cols-12 gap-3 md:gap-12 items-center">
+      <div className="relative z-10 my-4 md:my-auto w-full max-w-7xl mx-auto grid grid-cols-12 gap-3 md:gap-12 items-center">
         {/* Left Column: Hero HUD Portrait */}
         {siteConfig.hero.backgroundImage && (
           <motion.div
@@ -178,15 +178,15 @@ export default function EntryChamber() {
 
       {/* Footer Navigation Indicator */}
       <div className="relative z-10 w-full flex flex-col items-center pb-2">
-        <span className="font-mono text-[10px] text-platinum/40 tracking-[0.3em] uppercase mb-2">
+        <span className="font-mono text-[8px] md:text-[10px] text-platinum/40 tracking-[0.2em] md:tracking-[0.3em] uppercase mb-1 md:mb-2">
           {siteConfig.hero.tagline}
         </span>
         <button
           onClick={handleScrollDown}
-          className="flex flex-col items-center justify-center p-2 text-platinum hover:text-gold transition-colors duration-300 group focus:outline-none"
+          className="flex flex-col items-center justify-center p-1 md:p-2 text-platinum hover:text-gold transition-colors duration-300 group focus:outline-none"
           aria-label="Scroll to next section"
         >
-          <ChevronDown size={24} className="animate-bounce group-hover:translate-y-1 transition-transform" />
+          <ChevronDown className="w-5 h-5 md:w-6 md:h-6 animate-bounce group-hover:translate-y-1 transition-transform" />
         </button>
       </div>
     </section>
