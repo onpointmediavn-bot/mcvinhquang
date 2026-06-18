@@ -35,16 +35,16 @@ export default function EntryChamber() {
       {/* Background Kinetic Systems */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30 select-none">
         {/* Gear 1 */}
-        <div className="absolute -top-20 -left-20 text-charcoal animate-spin-slow">
-          <Settings size={400} strokeWidth={0.5} />
+        <div className="absolute -top-10 -left-10 md:-top-20 md:-left-20 text-charcoal animate-spin-slow w-48 h-48 md:w-[400px] md:h-[400px]">
+          <Settings className="w-full h-full" strokeWidth={0.5} />
         </div>
         {/* Gear 2 */}
-        <div className="absolute -bottom-40 -right-40 text-charcoal animate-spin-slow-reverse">
-          <Settings size={550} strokeWidth={0.3} />
+        <div className="absolute -bottom-20 -right-20 md:-bottom-40 md:-right-40 text-charcoal animate-spin-slow-reverse w-64 h-64 md:w-[550px] md:h-[550px]">
+          <Settings className="w-full h-full" strokeWidth={0.3} />
         </div>
         {/* Gear 3 */}
-        <div className="absolute top-1/3 right-10 text-charcoal/40 animate-spin-medium">
-          <Settings size={180} strokeWidth={0.6} />
+        <div className="absolute top-1/3 right-4 md:right-10 text-charcoal/40 animate-spin-medium w-24 h-24 md:w-[180px] md:h-[180px]">
+          <Settings className="w-full h-full" strokeWidth={0.6} />
         </div>
         
         {/* Scanning Light overlay */}
