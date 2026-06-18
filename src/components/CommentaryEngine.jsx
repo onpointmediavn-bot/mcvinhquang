@@ -5,7 +5,7 @@ import { siteConfig } from "@/data/content";
 
 export default function CommentaryEngine() {
   return (
-    <section id="commentary-engine" className="relative min-h-screen w-full bg-graphite flex flex-col justify-center py-20 px-6 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid-fine">
+    <section id="commentary-engine" className="relative md:min-h-screen w-full bg-graphite flex flex-col justify-center py-12 md:py-20 px-6 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid-fine">
       <div className="relative z-10 max-w-7xl mx-auto w-full">
 
         {/* Section Header */}

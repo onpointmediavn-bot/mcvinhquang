@@ -100,7 +100,7 @@ export default function RealEstateEngine() {
   };
 
   return (
-    <section id="real-estate-engine" className="relative min-h-screen w-full bg-graphite flex flex-col justify-center py-20 px-6 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid-fine">
+    <section id="real-estate-engine" className="relative md:min-h-screen w-full bg-graphite flex flex-col justify-center py-12 md:py-20 px-6 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid-fine">
       {/* Decorative mechanical axis grid */}
       <div className="absolute inset-0 pointer-events-none opacity-15">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-dashed border-gold/10 animate-spin-slow"></div>

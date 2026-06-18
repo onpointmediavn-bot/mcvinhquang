@@ -41,7 +41,7 @@ export default function ActivationTerminal() {
   };
 
   return (
-    <section id="activation-terminal" className="relative min-h-screen w-full bg-obsidian flex flex-col justify-center py-24 px-6 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid">
+    <section id="activation-terminal" className="relative md:min-h-screen w-full bg-obsidian flex flex-col justify-center py-16 md:py-24 px-6 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid">
 
       {/* Golden visual radiation overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-40">

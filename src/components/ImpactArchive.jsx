@@ -94,7 +94,7 @@ export default function ImpactArchive() {
   });
 
   return (
-    <section id="impact-archive" className="relative min-h-screen w-full bg-obsidian flex flex-col justify-center py-20 px-6 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid">
+    <section id="impact-archive" className="relative md:min-h-screen w-full bg-obsidian flex flex-col justify-center py-12 md:py-20 px-6 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid">
       <div className="relative z-10 max-w-7xl mx-auto w-full">
 
         {/* Section Header */}
