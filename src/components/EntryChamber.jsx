@@ -31,19 +31,6 @@ export default function EntryChamber() {
 
   return (
     <section className="relative md:h-screen min-h-[400px] w-full overflow-hidden bg-obsidian flex flex-col justify-between pt-4 pb-4 px-6 md:p-12 border-b border-charcoal blueprint-grid">
-      {/* Hero Background Image (faded on desktop, visible on mobile) */}
-      {siteConfig.hero.backgroundImage && (
-        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden lg:opacity-10">
-          <img
-            src={`/${siteConfig.hero.backgroundImage}`}
-            alt="MC Vinh Quang Hero Background"
-            className="w-full h-full object-cover object-center opacity-35 scale-105 select-none transition-transform duration-[10s] ease-out hover:scale-100"
-          />
-          {/* Sophisticated dark gradient overlays to merge image into theme */}
-          <div className="absolute inset-0 bg-gradient-to-b from-obsidian/70 via-obsidian/50 to-obsidian"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(6,6,6,0.1)_0%,rgba(6,6,6,0.95)_85%)]"></div>
-        </div>
-      )}
 
       {/* Background Kinetic Systems */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30 select-none">
