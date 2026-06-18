@@ -122,18 +122,18 @@ export default function CustomModule() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full items-stretch relative z-10"
+            className="grid grid-cols-12 gap-2 md:gap-6 w-full items-stretch relative z-10"
           >
             {images.map((img, idx) => {
               // Determine grid column span and aspect ratio classes:
-              // Index 0, 1, 2 (Top Row): 3 images, each lg:col-span-4 (3 * 4 = 12 columns)
-              // Index 3, 4 (Bottom Row): 2 landscape images, each lg:col-span-6 (2 * 6 = 12 columns)
+              // Index 0, 1, 2 (Top Row): 3 images, each col-span-4 (3 * 4 = 12 columns)
+              // Index 3, 4 (Bottom Row): 2 landscape images, each col-span-6 (2 * 6 = 12 columns)
               let gridClasses = "";
               
               if (idx < 3) {
-                gridClasses = "lg:col-span-4 aspect-[4/3] lg:aspect-auto lg:h-[320px]";
+                gridClasses = "col-span-4 aspect-[4/3] lg:aspect-auto lg:h-[320px]";
               } else {
-                gridClasses = "lg:col-span-6 aspect-video lg:aspect-auto lg:h-[360px]";
+                gridClasses = "col-span-6 aspect-video lg:aspect-auto lg:h-[360px]";
               }
 
               return (

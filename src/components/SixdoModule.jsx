@@ -125,7 +125,7 @@ export default function SixdoModule() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full items-stretch relative z-10"
+            className="grid grid-cols-12 gap-2 md:gap-6 w-full items-stretch relative z-10"
           >
             {images.map((img, idx) => {
               // Determine grid column span and aspect ratio classes:
@@ -135,12 +135,12 @@ export default function SixdoModule() {
               
               if (idx < 2) {
                 if (idx === 0) {
-                  gridClasses = "lg:col-span-8 aspect-[16/10] lg:aspect-auto lg:h-[400px]";
+                  gridClasses = "col-span-8 aspect-[16/10] lg:aspect-auto lg:h-[400px]";
                 } else {
-                  gridClasses = "lg:col-span-4 aspect-[3/4] lg:aspect-auto lg:h-[400px]";
+                  gridClasses = "col-span-4 aspect-[3/4] lg:aspect-auto lg:h-[400px]";
                 }
               } else {
-                gridClasses = "lg:col-span-3 aspect-square lg:aspect-auto lg:h-[220px]";
+                gridClasses = "col-span-3 aspect-square lg:aspect-auto lg:h-[220px]";
               }
 
               return (

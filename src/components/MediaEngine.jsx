@@ -9,19 +9,19 @@ export default function MediaEngine() {
   const [hoveredNode, setHoveredNode] = useState(null);
   const [activeVideo, setActiveVideo] = useState(null);
 
-  // Position mappings for absolute placement on desktop
+  // Position mappings for absolute placement on desktop/mobile
   const positions = {
-    "center": "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:scale-110 z-20",
-    "top-left": "top-4 left-4 md:top-12 md:left-12 z-10",
-    "bottom-right": "bottom-4 right-4 md:bottom-12 md:right-12 z-10",
-    "top-right": "top-4 right-4 md:top-16 md:right-24 z-10",
-    "bottom-left": "bottom-4 left-4 md:bottom-20 md:left-24 z-10"
+    "center": "top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 sm:scale-105 md:scale-110 z-20",
+    "top-left": "top-4 left-4 sm:top-8 sm:left-8 md:top-12 md:left-12 z-10",
+    "bottom-right": "bottom-4 right-4 sm:bottom-8 sm:right-8 md:bottom-12 md:right-12 z-10",
+    "top-right": "top-4 right-4 sm:top-8 sm:right-8 md:top-16 md:right-24 z-10",
+    "bottom-left": "bottom-4 left-4 sm:bottom-8 sm:left-8 md:bottom-20 md:left-24 z-10"
   };
 
   const sizes = {
-    "large": "w-36 h-36 md:w-56 md:h-56",
-    "medium": "w-28 h-28 md:w-44 md:h-44",
-    "small": "w-24 h-24 md:w-36 md:h-36"
+    "large": "w-28 h-28 sm:w-36 sm:h-36 md:w-56 md:h-56",
+    "medium": "w-20 h-20 sm:w-28 sm:h-28 md:w-44 md:h-44",
+    "small": "w-16 h-16 sm:w-24 sm:h-24 md:w-36 md:h-36"
   };
 
   return (
@@ -48,49 +48,8 @@ export default function MediaEngine() {
           </p>
         </div>
 
-        {/* Mobile Grid Layout (Visible on mobile only) */}
-        <div className="md:hidden grid grid-cols-2 gap-4 w-full relative z-10">
-          {siteConfig.vjReview.videos.map((node, index) => {
-            const gridClass = index === 4 ? "col-span-2 aspect-[21/9]" : "col-span-1 aspect-video";
-            return (
-              <div
-                key={node.id}
-                onClick={() => setActiveVideo(node)}
-                className={`relative rounded-sm overflow-hidden border border-charcoal bg-obsidian cursor-pointer group flex flex-col justify-between p-3 ${gridClass}`}
-              >
-                {/* HUD Corner Brackets */}
-                <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-gold/30"></div>
-                <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-gold/30"></div>
-                <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-gold/30"></div>
-                <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-gold/30"></div>
-
-                <div className="p-1 font-mono text-[7px] text-platinum/40 flex justify-between z-10">
-                  <span className="text-gold font-bold">VQ_SIG_0{node.id}</span>
-                  <span>LIVE</span>
-                </div>
-
-                <img
-                  src={`/${node.image}`}
-                  alt={node.title}
-                  className="absolute inset-0 w-full h-full object-cover opacity-65 group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent"></div>
-
-                <div className="relative z-10 flex items-center justify-between w-full mt-auto pt-6">
-                  <span className="font-mono text-[8px] text-platinum font-bold uppercase truncate max-w-[80%]">
-                    {node.title}
-                  </span>
-                  <div className="p-1.5 rounded-full bg-gold/90 text-obsidian shadow-[0_0_10px_rgba(213,182,122,0.3)]">
-                    <Play size={8} fill="currentColor" />
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Network Layout Workspace (Desktop only) */}
-        <div className="hidden md:flex relative w-full h-[600px] bg-graphite/10 border border-charcoal/80 rounded-sm overflow-hidden items-center justify-center p-4">
+        {/* Network Layout Workspace (Visible on both mobile and desktop) */}
+        <div className="relative w-full h-[450px] sm:h-[500px] md:h-[600px] bg-graphite/10 border border-charcoal/80 rounded-sm overflow-hidden flex items-center justify-center p-4">
 
           {/* Signal Connection Lines SVG */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
@@ -112,15 +71,15 @@ export default function MediaEngine() {
             {hoveredNode === 4 && <circle r="3" fill="#FFF2D2" className="animate-ping"><animateMotion dur="2s" repeatCount="indefinite" path="M 20,80 L 50,50" pathLength="100" /></circle>}
 
             {/* Subtle orbital signal rings */}
-            <circle cx="50%" cy="50%" r="80" stroke="rgba(213, 182, 122, 0.05)" strokeWidth="1" fill="none" strokeDasharray="5,5" className="animate-spin-slow" />
-            <circle cx="50%" cy="50%" r="160" stroke="rgba(213, 182, 122, 0.03)" strokeWidth="1" fill="none" strokeDasharray="10,10" className="animate-spin-slow-reverse" />
+            <circle cx="50%" cy="50%" r="60" sm:r="80" stroke="rgba(213, 182, 122, 0.05)" strokeWidth="1" fill="none" strokeDasharray="5,5" className="animate-spin-slow" />
+            <circle cx="50%" cy="50%" r="120" sm:r="160" stroke="rgba(213, 182, 122, 0.03)" strokeWidth="1" fill="none" strokeDasharray="10,10" className="animate-spin-slow-reverse" />
           </svg>
 
           {/* Network Floating Nodes Container */}
           <div className="absolute inset-0">
             {siteConfig.vjReview.videos.map((node, index) => {
               const posClass = positions[node.pos] || "relative";
-              const sizeClass = sizes[node.size] || "w-32 h-32";
+              const sizeClass = sizes[node.size] || "w-24 h-24";
 
               return (
                 <div
@@ -139,17 +98,17 @@ export default function MediaEngine() {
                   <div className="absolute inset-0 bg-obsidian/40 group-hover:bg-gold/[0.05] transition-colors duration-300"></div>
 
                   {/* Core Telemetry Node HUD Content */}
-                  <div className="relative z-10 flex flex-col items-center p-3">
-                    <div className={`p-2 rounded-full border border-charcoal/80 bg-obsidian/80 text-gold mb-2 transition-transform duration-500 group-hover:scale-110 ${node.size === 'large' ? 'w-10 h-10' : 'w-8 h-8'} flex items-center justify-center`}>
-                      {node.size === 'large' ? <Radio size={16} className="animate-pulse" /> : <Play size={12} fill="currentColor" />}
+                  <div className="relative z-10 flex flex-col items-center p-2 sm:p-3">
+                    <div className={`p-1.5 sm:p-2 rounded-full border border-charcoal/80 bg-obsidian/80 text-gold mb-1 sm:mb-2 transition-transform duration-500 group-hover:scale-110 ${node.size === 'large' ? 'w-8 h-8 sm:w-10 sm:h-10' : 'w-6 h-6 sm:w-8 sm:h-8'} flex items-center justify-center`}>
+                      {node.size === 'large' ? <Radio size={14} className="animate-pulse" /> : <Play size={10} fill="currentColor" />}
                     </div>
-                    <span className="font-mono text-[9px] md:text-[10px] tracking-wider text-platinum font-semibold block px-2 py-0.5 bg-obsidian/70 backdrop-blur-sm border border-charcoal/40 rounded-sm">
+                    <span className="font-mono text-[7px] sm:text-[9px] md:text-[10px] tracking-wider text-platinum font-semibold block px-1 sm:px-2 py-0.5 bg-obsidian/70 backdrop-blur-sm border border-charcoal/40 rounded-sm truncate max-w-[90%]">
                       {node.title}
                     </span>
                   </div>
 
                   {/* High tech node details (only visible on hovered/large screen nodes) */}
-                  <div className="absolute bottom-2 font-mono text-[7px] text-gold/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-widest uppercase">
+                  <div className="absolute bottom-2 font-mono text-[7px] text-gold/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 tracking-widest uppercase hidden sm:block">
                     SIG_TX: ENGAGED
                   </div>
                 </div>
@@ -158,7 +117,7 @@ export default function MediaEngine() {
           </div>
 
           {/* Local Active Node Details Telemetry Card (Desktop Bottom-Left) */}
-          <div className="absolute bottom-4 left-4 p-4 metal-panel border border-charcoal/80 backdrop-blur-lg max-w-xs font-mono text-[10px] space-y-2 pointer-events-none">
+          <div className="absolute bottom-4 left-4 p-4 metal-panel border border-charcoal/80 backdrop-blur-lg max-w-xs font-mono text-[10px] space-y-2 pointer-events-none hidden md:block">
             <div className="flex justify-between items-center text-gold border-b border-charcoal/60 pb-1">
               <span>NET_NODE: ACTIVE_DETAILS</span>
               <Activity size={10} className="animate-pulse" />
