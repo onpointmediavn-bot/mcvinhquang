@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@theme {
+  --color-obsidian: #060606;
+  --color-graphite: #111111;
+  --color-charcoal: #1B1B1B;
+  --color-platinum: #E8E8E8;
+  --color-gold: #D5B67A;
+  --color-warmwhite: #FFF2D2;
+  
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --font-mono: 'Share Tech Mono', monospace;
+}
+
+:root {
+  --background: #060606;
+  --foreground: #E8E8E8;
+}
+
+body {
+  background-color: #060606;
+  color: #E8E8E8;
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display), sans-serif;
+}
+
+/* Custom Mechanical Background (Blueprint Grid) */
+.blueprint-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(213, 182, 122, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(213, 182, 122, 0.02) 1px, transparent 1px);
+}
+
+.blueprint-grid-fine {
+  background-size: 10px 10px;
+  background-image: 
+    linear-gradient(to right, rgba(213, 182, 122, 0.01) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(213, 182, 122, 0.01) 1px, transparent 1px);
+}
+
+/* Glow effects */
+.gold-glow {
+  box-shadow: 0 0 35px rgba(213, 182, 122, 0.08);
+}
+
+.gold-glow-hover {
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 30px rgba(213, 182, 122, 0.2);
+  border-color: rgba(213, 182, 122, 0.5);
+}
+
+/* Light sweep animation on text */
+@keyframes sweep {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-sweep {
+  background: linear-gradient(
+    90deg,
+    #E8E8E8 0%,
+    #FFF2D2 25%,
+    #D5B67A 50%,
+    #FFF2D2 75%,
+    #E8E8E8 100%
+  );
+  background-size: 200% auto;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: sweep 8s linear infinite;
+}
+
+/* Custom rotations for mechanical elements */
+@keyframes spin-slow-clockwise {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-slow-counter {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow-clockwise 45s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+  animation: spin-slow-counter 35s linear infinite;
+}
+
+.animate-spin-medium {
+  animation: spin-slow-clockwise 20s linear infinite;
+}
+
+/* Scan line overlay */
+.scan-line {
+  background: linear-gradient(
+    to bottom,
+    rgba(213, 182, 122, 0) 0%,
+    rgba(213, 182, 122, 0.02) 10%,
+    rgba(213, 182, 122, 0.05) 50%,
+    rgba(213, 182, 122, 0.02) 90%,
+    rgba(213, 182, 122, 0) 100%
+  );
+  background-size: 100% 300px;
+  animation: scan 12s linear infinite;
+}
+
+@keyframes scan {
+  0% { background-position: 0 -300px; }
+  100% { background-position: 0 100%; }
+}
+
+/* Custom Scrollbar for Luxury Aesthetics */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #060606;
+}
+::-webkit-scrollbar-thumb {
+  background: #1B1B1B;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #D5B67A;
+}
+
+/* Utility layout components */
+.metal-panel {
+  background-color: rgba(27, 27, 27, 0.45);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 232, 232, 0.08);
+  border-radius: 4px;
+}
