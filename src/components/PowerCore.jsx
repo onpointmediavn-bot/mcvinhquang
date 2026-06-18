@@ -46,15 +46,15 @@ export default function PowerCore() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-12 gap-4 lg:gap-12 items-center">
           {/* Left Column: Mechanical containment container with portrait */}
-          <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-sm aspect-[3/4] p-4 bg-charcoal/20 border border-charcoal/80 rounded-sm gold-glow flex items-center justify-center overflow-hidden group">
+          <div className="col-span-4 lg:col-span-5 flex justify-center">
+            <div className="relative w-full max-w-sm aspect-[3/4] p-1 md:p-4 bg-charcoal/20 border border-charcoal/80 rounded-sm gold-glow flex items-center justify-center overflow-hidden group">
               {/* Corner brackets */}
-              <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-gold/40"></div>
-              <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-gold/40"></div>
-              <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-gold/40"></div>
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-gold/40"></div>
+              <div className="absolute top-0 left-0 w-2 h-2 md:w-4 md:h-4 border-t border-l md:border-t-2 md:border-l-2 border-gold/40"></div>
+              <div className="absolute top-0 right-0 w-2 h-2 md:w-4 md:h-4 border-t border-r md:border-t-2 md:border-r-2 border-gold/40"></div>
+              <div className="absolute bottom-0 left-0 w-2 h-2 md:w-4 md:h-4 border-b border-l md:border-b-2 md:border-l-2 border-gold/40"></div>
+              <div className="absolute bottom-0 right-0 w-2 h-2 md:w-4 md:h-4 border-b border-r md:border-b-2 md:border-r-2 border-gold/40"></div>
               
               <div className="relative w-full h-full overflow-hidden border border-charcoal/40 bg-obsidian">
                 {/* Scanner bar */}
@@ -68,7 +68,7 @@ export default function PowerCore() {
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/10 to-transparent"></div>
                 
                 {/* Interactive HUD text on portrait */}
-                <div className="absolute bottom-4 left-4 right-4 font-mono text-[10px] text-platinum/60 flex justify-between bg-obsidian/80 backdrop-blur-sm p-2 border border-charcoal/60">
+                <div className="hidden md:flex absolute bottom-4 left-4 right-4 font-mono text-[10px] text-platinum/60 justify-between bg-obsidian/80 backdrop-blur-sm p-2 border border-charcoal/60">
                   <span>ID: VQ_CORE_01</span>
                   <span>THERM: NOMINAL</span>
                 </div>
@@ -77,9 +77,9 @@ export default function PowerCore() {
           </div>
 
           {/* Right Column: Central Power Core HUD */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
+          <div className="col-span-8 lg:col-span-7 flex flex-col justify-center">
             {/* The Telemetry Core Display */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+            <div className="grid grid-cols-2 gap-2 md:gap-6 mb-4 md:mb-10">
               {siteConfig.about.stats.map((stat, index) => {
                 const IconComponent = icons[index] || Cpu;
                 const isActive = activeNode === index;
@@ -88,7 +88,7 @@ export default function PowerCore() {
                   <button
                     key={index}
                     onClick={() => setActiveNode(index)}
-                    className={`text-left p-6 metal-panel relative overflow-hidden transition-all duration-300 focus:outline-none cursor-pointer select-none group border ${
+                    className={`text-left p-2.5 md:p-6 metal-panel relative overflow-hidden transition-all duration-300 focus:outline-none cursor-pointer select-none group border ${
                       isActive 
                         ? "border-gold/60 bg-gold/[0.03] shadow-[0_0_20px_rgba(213,182,122,0.1)]" 
                         : "border-charcoal hover:border-gold/30 hover:bg-charcoal/20"
@@ -99,14 +99,14 @@ export default function PowerCore() {
                     
                     <div className="flex items-start justify-between">
                       <div>
-                        <span className="font-mono text-xs text-platinum/50 block tracking-widest mb-1 uppercase">
+                        <span className="font-mono text-[7px] md:text-xs text-platinum/50 block tracking-widest mb-1 uppercase">
                           {stat.label}
                         </span>
-                        <span className="text-2xl md:text-3xl font-black text-platinum tracking-tight group-hover:text-gold transition-colors duration-300">
+                        <span className="text-[10px] sm:text-2xl md:text-3xl font-black text-platinum tracking-tight group-hover:text-gold transition-colors duration-300">
                           {stat.value}
                         </span>
                       </div>
-                      <IconComponent className={`w-5 h-5 transition-colors duration-300 ${isActive ? "text-gold" : "text-platinum/30 group-hover:text-gold/60"}`} />
+                      <IconComponent className={`w-3.5 h-3.5 md:w-5 md:h-5 transition-colors duration-300 ${isActive ? "text-gold" : "text-platinum/30 group-hover:text-gold/60"}`} />
                     </div>
                   </button>
                 );
@@ -114,13 +114,13 @@ export default function PowerCore() {
             </div>
 
             {/* Core Output: Philosophy Transmission Panel */}
-            <div className="metal-panel border border-charcoal p-8 relative min-h-[200px] flex flex-col justify-between">
+            <div className="metal-panel border border-charcoal p-4 md:p-8 relative min-h-[140px] md:min-h-[200px] flex flex-col justify-between">
               {/* Mechanical Header */}
-              <div className="flex justify-between items-center border-b border-charcoal/60 pb-3 mb-4">
-                <span className="font-mono text-[10px] text-gold tracking-widest uppercase">
+              <div className="flex justify-between items-center border-b border-charcoal/60 pb-2 md:pb-3 mb-3 md:mb-4">
+                <span className="font-mono text-[8px] md:text-[10px] text-gold tracking-widest uppercase">
                   CORE_OUTPUT // TRANS_LOG_0{activeNode + 1}
                 </span>
-                <span className="font-mono text-[9px] text-platinum/40">
+                <span className="font-mono text-[8px] md:text-[9px] text-platinum/40">
                   DECRYPTION: ACTIVE
                 </span>
               </div>
@@ -134,12 +134,12 @@ export default function PowerCore() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -10 }}
                     transition={{ duration: 0.4 }}
-                    className="space-y-4"
+                    className="space-y-2 md:space-y-4"
                   >
-                    <h3 className="text-lg md:text-xl font-bold text-gold tracking-wide">
+                    <h3 className="text-xs md:text-xl font-bold text-gold tracking-wide">
                       {siteConfig.about.shareTitle}
                     </h3>
-                    <p className="text-platinum/80 leading-relaxed text-sm md:text-base">
+                    <p className="text-platinum/80 leading-relaxed text-[10px] md:text-base">
                       {siteConfig.about.shareParagraphs[activeNode] || siteConfig.about.shareParagraphs[0]}
                     </p>
                   </motion.div>
@@ -147,7 +147,7 @@ export default function PowerCore() {
               </div>
 
               {/* Mechanical telemetry indicator footer */}
-              <div className="flex items-center space-x-2 mt-6 pt-4 border-t border-charcoal/60">
+              <div className="flex items-center space-x-2 mt-3 md:mt-6 pt-3 md:pt-4 border-t border-charcoal/60">
                 <div className="h-1 flex-grow bg-charcoal rounded-full overflow-hidden">
                   <motion.div 
                     className="h-full bg-gold"
@@ -156,7 +156,7 @@ export default function PowerCore() {
                     transition={{ duration: 0.5 }}
                   />
                 </div>
-                <span className="font-mono text-[10px] text-gold/80 pl-2">
+                <span className="font-mono text-[8px] md:text-[10px] text-gold/80 pl-2">
                   {((activeNode + 1) * 25).toFixed(0)}% POWER
                 </span>
               </div>

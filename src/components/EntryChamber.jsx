@@ -82,21 +82,21 @@ export default function EntryChamber() {
       </div>
 
       {/* Centerpiece Split Engine */}
-      <div className="relative z-10 my-auto w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="relative z-10 my-auto w-full max-w-7xl mx-auto grid grid-cols-12 gap-3 md:gap-12 items-center">
         {/* Left Column: Hero HUD Portrait */}
         {siteConfig.hero.backgroundImage && (
           <motion.div
             variants={itemVariants}
             initial="hidden"
             animate="visible"
-            className="lg:col-span-6 hidden lg:flex justify-center"
+            className="col-span-4 lg:col-span-6 flex justify-center"
           >
-            <div className="relative w-full max-w-md aspect-[3/4] p-3 bg-charcoal/20 border border-charcoal/80 rounded-sm gold-glow flex items-center justify-center overflow-hidden group gold-glow-hover">
+            <div className="relative w-full max-w-md aspect-[3/4] p-1 md:p-3 bg-charcoal/20 border border-charcoal/80 rounded-sm gold-glow flex items-center justify-center overflow-hidden group gold-glow-hover">
               {/* HUD Bracket Corners */}
-              <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
-              <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
-              <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
+              <div className="absolute top-0 left-0 w-2 h-2 md:w-4 md:h-4 border-t border-l md:border-t-2 md:border-l-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
+              <div className="absolute top-0 right-0 w-2 h-2 md:w-4 md:h-4 border-t border-r md:border-t-2 md:border-r-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-2 h-2 md:w-4 md:h-4 border-b border-l md:border-b-2 md:border-l-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
+              <div className="absolute bottom-0 right-0 w-2 h-2 md:w-4 md:h-4 border-b border-r md:border-b-2 md:border-r-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
 
               {/* Inner Frame */}
               <div className="relative w-full h-full overflow-hidden border border-charcoal/40 bg-obsidian">
@@ -116,7 +116,7 @@ export default function EntryChamber() {
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/10 to-transparent"></div>
                 
                 {/* HUD Status Bar */}
-                <div className="absolute bottom-3 left-3 right-3 font-mono text-[9px] text-platinum/60 flex justify-between bg-obsidian/90 backdrop-blur-sm p-2 border border-charcoal/60">
+                <div className="hidden md:flex absolute bottom-3 left-3 right-3 font-mono text-[9px] text-platinum/60 justify-between bg-obsidian/90 backdrop-blur-sm p-2 border border-charcoal/60">
                   <span className="flex items-center gap-1">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                     LIVE_FEED: ONLINE
@@ -133,24 +133,24 @@ export default function EntryChamber() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left"
+          className="col-span-8 lg:col-span-6 flex flex-col items-start text-left"
         >
-          <motion.div variants={itemVariants} className="mb-4">
-            <span className="font-mono text-xs text-gold tracking-[0.3em] uppercase">
+          <motion.div variants={itemVariants} className="mb-2 md:mb-4">
+            <span className="font-mono text-[8px] md:text-xs text-gold tracking-[0.2em] md:tracking-[0.3em] uppercase">
               {siteConfig.hero.slogan}
             </span>
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-platinum tracking-tight leading-tight md:leading-none mb-6 animate-sweep md:whitespace-nowrap"
+            className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-platinum tracking-tight leading-tight md:leading-none mb-2 md:mb-6 animate-sweep md:whitespace-nowrap"
           >
             {siteConfig.hero.title}
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-2xl text-gold/90 font-medium tracking-[0.15em] mb-10"
+            className="text-xs sm:text-lg md:text-2xl text-gold/90 font-medium tracking-[0.05em] md:tracking-[0.15em] mb-4 md:mb-10"
           >
             {siteConfig.hero.subtitle}
           </motion.p>
@@ -158,18 +158,18 @@ export default function EntryChamber() {
           {/* Roles Machine Loop */}
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-2 md:flex md:flex-row gap-4 md:space-x-4 lg:space-x-6 text-center"
+            className="grid grid-cols-2 gap-2 md:flex md:flex-row md:space-x-4 lg:space-x-6 text-left"
           >
             {siteConfig.hero.roles.map((role, index) => (
               <div
                 key={index}
-                className="px-4 py-2 border border-charcoal bg-graphite/40 backdrop-blur-md flex items-center space-x-2 text-platinum hover:border-gold/30 transition-all duration-300 group"
+                className="px-2 py-1 md:px-4 md:py-2 border border-charcoal bg-graphite/40 backdrop-blur-md flex items-center space-x-1.5 md:space-x-2 text-platinum hover:border-gold/30 transition-all duration-300 group"
               >
-                {index === 0 && <Cpu size={14} className="text-gold group-hover:rotate-45 transition-transform duration-500" />}
-                {index === 1 && <Zap size={14} className="text-gold" />}
-                {index === 2 && <Activity size={14} className="text-gold" />}
-                {index === 3 && <Settings size={14} className="text-gold animate-spin" style={{ animationDuration: '6s' }} />}
-                <span className="font-mono text-xs tracking-wider font-semibold">{role}</span>
+                {index === 0 && <Cpu size={10} className="text-gold group-hover:rotate-45 transition-transform duration-500 w-2.5 h-2.5 md:w-3.5 md:h-3.5" />}
+                {index === 1 && <Zap size={10} className="text-gold w-2.5 h-2.5 md:w-3.5 md:h-3.5" />}
+                {index === 2 && <Activity size={10} className="text-gold w-2.5 h-2.5 md:w-3.5 md:h-3.5" />}
+                {index === 3 && <Settings size={10} className="text-gold animate-spin w-2.5 h-2.5 md:w-3.5 md:h-3.5" style={{ animationDuration: '6s' }} />}
+                <span className="font-mono text-[8px] md:text-xs tracking-wider font-semibold">{role}</span>
               </div>
             ))}
           </motion.div>
