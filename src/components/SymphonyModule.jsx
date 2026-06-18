@@ -176,19 +176,19 @@ export default function SymphonyModule() {
             className="flex flex-col gap-2 md:gap-6 w-full relative z-10"
           >
             {/* Top Row (3 images) */}
-            <div className="grid grid-cols-12 gap-2 md:gap-6 w-full items-stretch">
+            <div className="flex flex-row gap-2 md:gap-6 w-full items-stretch">
               {images.slice(0, 3).map((img, i) => {
                 const idx = i;
-                const gridClasses = "col-span-4 aspect-[4/3] lg:aspect-auto lg:h-[320px]";
+                const gridClasses = "flex-1 w-0 aspect-[4/3] lg:aspect-auto lg:h-[320px]";
                 return renderImageCard(img, idx, gridClasses);
               })}
             </div>
 
             {/* Bottom Row (2 images) */}
-            <div className="grid grid-cols-12 gap-2 md:gap-6 w-full items-stretch">
+            <div className="flex flex-row gap-2 md:gap-6 w-full items-stretch">
               {images.slice(3, 5).map((img, i) => {
                 const idx = i + 3;
-                const gridClasses = "col-span-6 aspect-video lg:aspect-auto lg:h-[360px]";
+                const gridClasses = "flex-1 w-0 aspect-video lg:aspect-auto lg:h-[360px]";
                 return renderImageCard(img, idx, gridClasses);
               })}
             </div>

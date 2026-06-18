@@ -46,9 +46,9 @@ export default function PowerCore() {
           </p>
         </div>
 
-        <div className="grid grid-cols-12 gap-4 lg:gap-12 items-center">
+        <div className="flex flex-row gap-4 lg:gap-12 items-center w-full">
           {/* Left Column: Mechanical containment container with portrait */}
-          <div className="col-span-4 lg:col-span-5 flex justify-center">
+          <div className="flex-[4] lg:flex-[5] w-0 flex justify-center">
             <div className="relative w-full max-w-sm aspect-[3/4] p-1 md:p-4 bg-charcoal/20 border border-charcoal/80 rounded-sm gold-glow flex items-center justify-center overflow-hidden group">
               {/* Corner brackets */}
               <div className="absolute top-0 left-0 w-2 h-2 md:w-4 md:h-4 border-t border-l md:border-t-2 md:border-l-2 border-gold/40"></div>
@@ -77,7 +77,7 @@ export default function PowerCore() {
           </div>
 
           {/* Right Column: Central Power Core HUD */}
-          <div className="col-span-8 lg:col-span-7 flex flex-col justify-center">
+          <div className="flex-[8] lg:flex-[7] w-0 flex flex-col justify-center">
             {/* The Telemetry Core Display */}
             <div className="grid grid-cols-2 gap-2 md:gap-6 mb-4 md:mb-10">
               {siteConfig.about.stats.map((stat, index) => {

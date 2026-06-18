@@ -69,14 +69,14 @@ export default function EntryChamber() {
       </div>
 
       {/* Centerpiece Split Engine */}
-      <div className="relative z-10 my-4 md:my-auto w-full max-w-7xl mx-auto grid grid-cols-12 gap-3 md:gap-12 items-center">
+      <div className="relative z-10 my-4 md:my-auto w-full max-w-7xl mx-auto flex flex-row gap-3 md:gap-12 items-center">
         {/* Left Column: Hero HUD Portrait */}
         {siteConfig.hero.backgroundImage && (
           <motion.div
             variants={itemVariants}
             initial="hidden"
             animate="visible"
-            className="col-span-4 lg:col-span-6 flex justify-center"
+            className="flex-[4] lg:flex-1 w-0 flex justify-center"
           >
             <div className="relative w-full max-w-md aspect-[3/4] p-1 md:p-3 bg-charcoal/20 border border-charcoal/80 rounded-sm gold-glow flex items-center justify-center overflow-hidden group gold-glow-hover">
               {/* HUD Bracket Corners */}
@@ -120,7 +120,7 @@ export default function EntryChamber() {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="col-span-8 lg:col-span-6 flex flex-col items-start text-left"
+          className="flex-[8] lg:flex-1 w-0 flex flex-col items-start text-left"
         >
           <motion.div variants={itemVariants} className="mb-2 md:mb-4">
             <span className="font-mono text-[8px] md:text-xs text-gold tracking-[0.2em] md:tracking-[0.3em] uppercase">

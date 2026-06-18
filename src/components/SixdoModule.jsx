@@ -181,21 +181,21 @@ export default function SixdoModule() {
             className="flex flex-col gap-2 md:gap-6 w-full relative z-10"
           >
             {/* Top Row (2 images: col-span-8 and col-span-4) */}
-            <div className="grid grid-cols-12 gap-2 md:gap-6 w-full items-stretch">
+            <div className="flex flex-row gap-2 md:gap-6 w-full items-stretch">
               {images.slice(0, 2).map((img, i) => {
                 const idx = i;
                 const gridClasses = idx === 0 
-                  ? "col-span-8 aspect-[16/10] lg:aspect-auto lg:h-[400px]" 
-                  : "col-span-4 aspect-[3/4] lg:aspect-auto lg:h-[400px]";
+                  ? "flex-[2] w-0 aspect-[16/10] lg:aspect-auto lg:h-[400px]" 
+                  : "flex-[1] w-0 aspect-[3/4] lg:aspect-auto lg:h-[400px]";
                 return renderImageCard(img, idx, gridClasses);
               })}
             </div>
 
             {/* Bottom Row (4 images: col-span-3 each) */}
-            <div className="grid grid-cols-12 gap-2 md:gap-6 w-full items-stretch">
+            <div className="flex flex-row gap-2 md:gap-6 w-full items-stretch">
               {images.slice(2, 6).map((img, i) => {
                 const idx = i + 2;
-                const gridClasses = "col-span-3 aspect-square lg:aspect-auto lg:h-[220px]";
+                const gridClasses = "flex-1 w-0 aspect-square lg:aspect-auto lg:h-[220px]";
                 return renderImageCard(img, idx, gridClasses);
               })}
             </div>

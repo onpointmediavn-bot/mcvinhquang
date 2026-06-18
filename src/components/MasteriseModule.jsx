@@ -118,12 +118,12 @@ export default function MasteriseModule() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-12 gap-2 md:gap-6 w-full items-stretch relative z-10"
+            className="flex flex-row gap-2 md:gap-6 w-full items-stretch relative z-10"
           >
             {images.map((img, idx) => {
               // Determine grid column span and aspect ratio classes:
               // Index 0, 1, 2 (Top Row): 3 images, each col-span-4 (3 * 4 = 12 columns)
-              const gridClasses = "col-span-4 aspect-[4/3] lg:aspect-auto lg:h-[320px]";
+              const gridClasses = "flex-1 w-0 aspect-[4/3] lg:aspect-auto lg:h-[320px]";
 
               return (
                 <motion.div
