@@ -139,7 +139,7 @@ export default function MasteriseModule() {
                   <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
 
                   {/* Telemetry Header */}
-                  <div className="p-3 border-b border-charcoal/80 bg-obsidian/60 flex justify-between items-center font-mono text-[8px] z-10 opacity-50 group-hover:opacity-100 transition-opacity">
+                  <div className="hidden md:flex p-3 border-b border-charcoal/80 bg-obsidian/60 justify-between items-center font-mono text-[8px] z-10 opacity-50 group-hover:opacity-100 transition-opacity">
                     <span className="text-gold font-bold flex items-center gap-1 uppercase">
                       <Terminal size={8} /> LINK_MS_0{idx + 1}
                     </span>

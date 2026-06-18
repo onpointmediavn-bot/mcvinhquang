@@ -38,14 +38,57 @@ export default function SixdoModule() {
     }
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, scale: 0.96, y: 15 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] }
-    }
+  const renderImageCard = (img, idx, gridClasses) => {
+    return (
+      <motion.div
+        key={idx}
+        variants={itemVariants}
+        onClick={() => setSelectedImg(idx)}
+        className={`relative overflow-hidden border border-charcoal bg-obsidian rounded-sm cursor-pointer group gold-glow-hover flex flex-col justify-between ${gridClasses}`}
+      >
+        {/* HUD Bracket Corners */}
+        <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+        <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+        <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+        <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+
+        {/* Telemetry Header */}
+        <div className="hidden md:flex p-3 border-b border-charcoal/80 bg-obsidian/60 justify-between items-center font-mono text-[8px] z-10 opacity-50 group-hover:opacity-100 transition-opacity">
+          <span className="text-gold font-bold flex items-center gap-1 uppercase">
+            <Terminal size={8} /> LINK_SD_0{idx + 1}
+          </span>
+          <span className="text-platinum/40 uppercase tracking-wider">
+            {idx < 2 
+              ? (idx === 0 ? "WIDE_FEED_STAGE" : "PORTRAIT_FEED") 
+              : `GRID_FEED_0${idx - 1}`}
+          </span>
+        </div>
+
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={`/${img}`} 
+            alt={`${siteConfig.sixdoModule.title} ${idx + 1}`}
+            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian/30 opacity-80 group-hover:opacity-50 transition-opacity"></div>
+        </div>
+
+        {/* Scanner bar animation on hover */}
+        <div className="absolute inset-0 z-10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <div className="absolute inset-x-0 h-0.5 bg-gold/50 shadow-[0_0_10px_#D5B67A] top-0 animate-scan"></div>
+          <div className="absolute inset-3 border border-gold/15"></div>
+        </div>
+
+        {/* Interactive Zoom Indicator */}
+        <div className="relative z-10 p-3 flex justify-between items-center bg-gradient-to-t from-obsidian/90 to-transparent pt-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+          <span className="font-mono text-[9px] text-platinum/50 flex items-center gap-1">
+            <Eye size={10} className="text-gold animate-pulse" /> CLICK_TO_EXPAND
+          </span>
+          <Maximize2 size={10} className="text-gold" />
+        </div>
+      </motion.div>
+    );
   };
 
   return (
@@ -125,75 +168,27 @@ export default function SixdoModule() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-12 gap-2 md:gap-6 w-full items-stretch relative z-10"
+            className="flex flex-col gap-2 md:gap-6 w-full relative z-10"
           >
-            {images.map((img, idx) => {
-              // Determine grid column span and aspect ratio classes:
-              // Index 0, 1 (Top Row): 2 images (8 columns + 4 columns = 12 columns)
-              // Index 2, 3, 4, 5 (Bottom Row): 4 images (3 columns * 4 = 12 columns)
-              let gridClasses = "";
-              
-              if (idx < 2) {
-                if (idx === 0) {
-                  gridClasses = "col-span-8 aspect-[16/10] lg:aspect-auto lg:h-[400px]";
-                } else {
-                  gridClasses = "col-span-4 aspect-[3/4] lg:aspect-auto lg:h-[400px]";
-                }
-              } else {
-                gridClasses = "col-span-3 aspect-square lg:aspect-auto lg:h-[220px]";
-              }
+            {/* Top Row (2 images: col-span-8 and col-span-4) */}
+            <div className="grid grid-cols-12 gap-2 md:gap-6 w-full items-stretch">
+              {images.slice(0, 2).map((img, i) => {
+                const idx = i;
+                const gridClasses = idx === 0 
+                  ? "col-span-8 aspect-[16/10] lg:aspect-auto lg:h-[400px]" 
+                  : "col-span-4 aspect-[3/4] lg:aspect-auto lg:h-[400px]";
+                return renderImageCard(img, idx, gridClasses);
+              })}
+            </div>
 
-              return (
-                <motion.div
-                  key={idx}
-                  variants={itemVariants}
-                  onClick={() => setSelectedImg(idx)}
-                  className={`relative overflow-hidden border border-charcoal bg-obsidian rounded-sm cursor-pointer group gold-glow-hover flex flex-col justify-between ${gridClasses}`}
-                >
-                  {/* HUD Bracket Corners */}
-                  <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
-                  <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
-                  <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
-                  <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
-
-                  {/* Telemetry Header */}
-                  <div className="p-3 border-b border-charcoal/80 bg-obsidian/60 flex justify-between items-center font-mono text-[8px] z-10 opacity-50 group-hover:opacity-100 transition-opacity">
-                    <span className="text-gold font-bold flex items-center gap-1 uppercase">
-                      <Terminal size={8} /> LINK_SD_0{idx + 1}
-                    </span>
-                    <span className="text-platinum/40 uppercase tracking-wider">
-                      {idx < 2 
-                        ? (idx === 0 ? "WIDE_FEED_STAGE" : "PORTRAIT_FEED") 
-                        : `GRID_FEED_0${idx - 1}`}
-                    </span>
-                  </div>
-
-                  {/* Background image */}
-                  <div className="absolute inset-0 z-0">
-                    <img 
-                      src={`/${img}`} 
-                      alt={`${siteConfig.sixdoModule.title} ${idx + 1}`}
-                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian/30 opacity-80 group-hover:opacity-50 transition-opacity"></div>
-                  </div>
-
-                  {/* Scanner bar animation on hover */}
-                  <div className="absolute inset-0 z-10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute inset-x-0 h-0.5 bg-gold/50 shadow-[0_0_10px_#D5B67A] top-0 animate-scan"></div>
-                    <div className="absolute inset-3 border border-gold/15"></div>
-                  </div>
-
-                  {/* Interactive Zoom Indicator */}
-                  <div className="relative z-10 p-3 flex justify-between items-center bg-gradient-to-t from-obsidian/90 to-transparent pt-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    <span className="font-mono text-[9px] text-platinum/50 flex items-center gap-1">
-                      <Eye size={10} className="text-gold animate-pulse" /> CLICK_TO_EXPAND
-                    </span>
-                    <Maximize2 size={10} className="text-gold" />
-                  </div>
-                </motion.div>
-              );
-            })}
+            {/* Bottom Row (4 images: col-span-3 each) */}
+            <div className="grid grid-cols-12 gap-2 md:gap-6 w-full items-stretch">
+              {images.slice(2, 6).map((img, i) => {
+                const idx = i + 2;
+                const gridClasses = "col-span-3 aspect-square lg:aspect-auto lg:h-[220px]";
+                return renderImageCard(img, idx, gridClasses);
+              })}
+            </div>
           </motion.div>
 
           {/* Panel Footer Telemetry */}

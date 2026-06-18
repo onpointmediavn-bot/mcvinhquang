@@ -48,6 +48,57 @@ export default function HoaXuanModule() {
     }
   };
 
+  const renderImageCard = (img, idx, gridClasses) => {
+    return (
+      <motion.div
+        key={idx}
+        variants={itemVariants}
+        onClick={() => setSelectedImg(idx)}
+        className={`relative overflow-hidden border border-charcoal bg-obsidian rounded-sm cursor-pointer group gold-glow-hover flex flex-col justify-between ${gridClasses}`}
+      >
+        {/* HUD Bracket Corners */}
+        <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+        <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+        <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+        <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+
+        {/* Telemetry Header */}
+        <div className="hidden md:flex p-3 border-b border-charcoal/80 bg-obsidian/60 justify-between items-center font-mono text-[8px] z-10 opacity-50 group-hover:opacity-100 transition-opacity">
+          <span className="text-gold font-bold flex items-center gap-1 uppercase">
+            <Terminal size={8} /> LINK_HX_0{idx + 1}
+          </span>
+          <span className="text-platinum/40 uppercase tracking-wider">
+            {idx < 3 ? `SYS_FEED_0${idx + 1}` : `WIDE_FEED_0${idx - 2}`}
+          </span>
+        </div>
+
+        {/* Background image */}
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={`/${img}`} 
+            alt={`${siteConfig.hoaXuanModule.title} ${idx + 1}`}
+            className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian/30 opacity-80 group-hover:opacity-50 transition-opacity"></div>
+        </div>
+
+        {/* Scanner bar animation on hover */}
+        <div className="absolute inset-0 z-10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <div className="absolute inset-x-0 h-0.5 bg-gold/50 shadow-[0_0_10px_#D5B67A] top-0 animate-scan"></div>
+          <div className="absolute inset-3 border border-gold/15"></div>
+        </div>
+
+        {/* Interactive Zoom Indicator */}
+        <div className="relative z-10 p-3 flex justify-between items-center bg-gradient-to-t from-obsidian/90 to-transparent pt-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+          <span className="font-mono text-[9px] text-platinum/50 flex items-center gap-1">
+            <Eye size={10} className="text-gold animate-pulse" /> CLICK_TO_EXPAND
+          </span>
+          <Maximize2 size={10} className="text-gold" />
+        </div>
+      </motion.div>
+    );
+  };
+
   return (
     <section id="hoaxuan-module" className="relative min-h-screen w-full bg-graphite flex flex-col justify-center py-20 px-6 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid-fine">
       {/* Decorative mechanical axis grid */}
@@ -68,7 +119,7 @@ export default function HoaXuanModule() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
             </span>
-            SECTION 07 // MC BẤT ĐỘNG SẢN
+            SECTION 07 // MODULE: KICK-OFF HOA XUAN
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-platinum tracking-tight uppercase leading-tight mb-3">
             {siteConfig.hoaXuanModule.title}
@@ -122,69 +173,25 @@ export default function HoaXuanModule() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-12 gap-2 md:gap-6 w-full items-stretch relative z-10"
+            className="flex flex-col gap-2 md:gap-6 w-full relative z-10"
           >
-            {images.map((img, idx) => {
-              // Determine grid column span and aspect ratio classes:
-              // Index 0, 1, 2 (Top Row): 3 images, each col-span-4 (3 * 4 = 12 columns)
-              // Index 3, 4 (Bottom Row): 2 landscape images, each col-span-6 (2 * 6 = 12 columns)
-              let gridClasses = "";
-              
-              if (idx < 3) {
-                gridClasses = "col-span-4 aspect-[4/3] lg:aspect-auto lg:h-[320px]";
-              } else {
-                gridClasses = "col-span-6 aspect-video lg:aspect-auto lg:h-[360px]";
-              }
+            {/* Top Row (3 images) */}
+            <div className="grid grid-cols-12 gap-2 md:gap-6 w-full items-stretch">
+              {images.slice(0, 3).map((img, i) => {
+                const idx = i;
+                const gridClasses = "col-span-4 aspect-[4/3] lg:aspect-auto lg:h-[320px]";
+                return renderImageCard(img, idx, gridClasses);
+              })}
+            </div>
 
-              return (
-                <motion.div
-                  key={idx}
-                  variants={itemVariants}
-                  onClick={() => setSelectedImg(idx)}
-                  className={`relative overflow-hidden border border-charcoal bg-obsidian rounded-sm cursor-pointer group gold-glow-hover flex flex-col justify-between ${gridClasses}`}
-                >
-                  {/* HUD Bracket Corners */}
-                  <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
-                  <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
-                  <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
-                  <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
-
-                  {/* Telemetry Header */}
-                  <div className="p-3 border-b border-charcoal/80 bg-obsidian/60 flex justify-between items-center font-mono text-[8px] z-10 opacity-50 group-hover:opacity-100 transition-opacity">
-                    <span className="text-gold font-bold flex items-center gap-1 uppercase">
-                      <Terminal size={8} /> LINK_HX_0{idx + 1}
-                    </span>
-                    <span className="text-platinum/40 uppercase tracking-wider">
-                      {idx < 3 ? `SYS_FEED_0${idx + 1}` : `WIDE_FEED_0${idx - 2}`}
-                    </span>
-                  </div>
-
-                  {/* Background image */}
-                  <div className="absolute inset-0 z-0">
-                    <img 
-                      src={`/${img}`} 
-                      alt={`${siteConfig.hoaXuanModule.title} ${idx + 1}`}
-                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian/30 opacity-80 group-hover:opacity-50 transition-opacity"></div>
-                  </div>
-
-                  {/* Scanner bar animation on hover */}
-                  <div className="absolute inset-0 z-10 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute inset-x-0 h-0.5 bg-gold/50 shadow-[0_0_10px_#D5B67A] top-0 animate-scan"></div>
-                    <div className="absolute inset-3 border border-gold/15"></div>
-                  </div>
-
-                  {/* Interactive Zoom Indicator */}
-                  <div className="relative z-10 p-3 flex justify-between items-center bg-gradient-to-t from-obsidian/90 to-transparent pt-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    <span className="font-mono text-[9px] text-platinum/50 flex items-center gap-1">
-                      <Eye size={10} className="text-gold animate-pulse" /> CLICK_TO_EXPAND
-                    </span>
-                    <Maximize2 size={10} className="text-gold" />
-                  </div>
-                </motion.div>
-              );
-            })}
+            {/* Bottom Row (2 images) */}
+            <div className="grid grid-cols-12 gap-2 md:gap-6 w-full items-stretch">
+              {images.slice(3, 5).map((img, i) => {
+                const idx = i + 3;
+                const gridClasses = "col-span-6 aspect-video lg:aspect-auto lg:h-[360px]";
+                return renderImageCard(img, idx, gridClasses);
+              })}
+            </div>
           </motion.div>
 
           {/* Panel Footer Telemetry */}
