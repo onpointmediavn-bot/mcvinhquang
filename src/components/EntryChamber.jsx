@@ -143,7 +143,7 @@ export default function EntryChamber() {
 
           <motion.h1
             variants={itemVariants}
-            className="text-4xl md:text-6xl lg:text-7xl font-black text-platinum tracking-tight leading-none mb-6 animate-sweep whitespace-nowrap"
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-platinum tracking-tight leading-tight md:leading-none mb-6 animate-sweep md:whitespace-nowrap"
           >
             {siteConfig.hero.title}
           </motion.h1>

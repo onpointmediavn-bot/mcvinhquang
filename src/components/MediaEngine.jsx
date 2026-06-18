@@ -40,7 +40,7 @@ export default function MediaEngine() {
             </span>
             SECTION 08 // SYSTEM: VOICE_NETWORK
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-platinum tracking-tight uppercase leading-none mb-3">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-platinum tracking-tight uppercase leading-tight mb-3">
             {siteConfig.vjReview.title}
           </h2>
           <p className="text-xs font-mono text-gold/70 uppercase tracking-[0.2em] mt-1">
@@ -48,8 +48,49 @@ export default function MediaEngine() {
           </p>
         </div>
 
-        {/* Network Layout Workspace */}
-        <div className="relative w-full h-[500px] md:h-[600px] bg-graphite/10 border border-charcoal/80 rounded-sm overflow-hidden flex items-center justify-center p-4">
+        {/* Mobile Grid Layout (Visible on mobile only) */}
+        <div className="md:hidden grid grid-cols-2 gap-4 w-full relative z-10">
+          {siteConfig.vjReview.videos.map((node, index) => {
+            const gridClass = index === 4 ? "col-span-2 aspect-[21/9]" : "col-span-1 aspect-video";
+            return (
+              <div
+                key={node.id}
+                onClick={() => setActiveVideo(node)}
+                className={`relative rounded-sm overflow-hidden border border-charcoal bg-obsidian cursor-pointer group flex flex-col justify-between p-3 ${gridClass}`}
+              >
+                {/* HUD Corner Brackets */}
+                <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-gold/30"></div>
+                <div className="absolute top-0 right-0 w-2 h-2 border-t border-r border-gold/30"></div>
+                <div className="absolute bottom-0 left-0 w-2 h-2 border-b border-l border-gold/30"></div>
+                <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-gold/30"></div>
+
+                <div className="p-1 font-mono text-[7px] text-platinum/40 flex justify-between z-10">
+                  <span className="text-gold font-bold">VQ_SIG_0{node.id}</span>
+                  <span>LIVE</span>
+                </div>
+
+                <img
+                  src={`/${node.image}`}
+                  alt={node.title}
+                  className="absolute inset-0 w-full h-full object-cover opacity-65 group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/30 to-transparent"></div>
+
+                <div className="relative z-10 flex items-center justify-between w-full mt-auto pt-6">
+                  <span className="font-mono text-[8px] text-platinum font-bold uppercase truncate max-w-[80%]">
+                    {node.title}
+                  </span>
+                  <div className="p-1.5 rounded-full bg-gold/90 text-obsidian shadow-[0_0_10px_rgba(213,182,122,0.3)]">
+                    <Play size={8} fill="currentColor" />
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Network Layout Workspace (Desktop only) */}
+        <div className="hidden md:flex relative w-full h-[600px] bg-graphite/10 border border-charcoal/80 rounded-sm overflow-hidden items-center justify-center p-4">
 
           {/* Signal Connection Lines SVG */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">
@@ -80,7 +121,6 @@ export default function MediaEngine() {
             {siteConfig.vjReview.videos.map((node, index) => {
               const posClass = positions[node.pos] || "relative";
               const sizeClass = sizes[node.size] || "w-32 h-32";
-              const isHovered = hoveredNode === index;
 
               return (
                 <div
@@ -92,7 +132,7 @@ export default function MediaEngine() {
                 >
                   {/* Backdrop optimized cover */}
                   <img
-                    src={node.image}
+                    src={`/${node.image}`}
                     alt={node.title}
                     className="absolute inset-0 w-full h-full object-cover opacity-70 group-hover:opacity-100 transition-opacity duration-500"
                   />
@@ -118,7 +158,7 @@ export default function MediaEngine() {
           </div>
 
           {/* Local Active Node Details Telemetry Card (Desktop Bottom-Left) */}
-          <div className="absolute bottom-4 left-4 p-4 metal-panel border border-charcoal/80 backdrop-blur-lg hidden md:block max-w-xs font-mono text-[10px] space-y-2 pointer-events-none">
+          <div className="absolute bottom-4 left-4 p-4 metal-panel border border-charcoal/80 backdrop-blur-lg max-w-xs font-mono text-[10px] space-y-2 pointer-events-none">
             <div className="flex justify-between items-center text-gold border-b border-charcoal/60 pb-1">
               <span>NET_NODE: ACTIVE_DETAILS</span>
               <Activity size={10} className="animate-pulse" />
@@ -175,7 +215,7 @@ export default function MediaEngine() {
               {/* Mock Cinema screen */}
               <div className="flex-grow bg-obsidian/90 relative flex items-center justify-center overflow-hidden border border-charcoal/40 my-3">
                 <img
-                  src={activeVideo.image}
+                  src={`/${activeVideo.image}`}
                   alt={activeVideo.title}
                   className="w-full h-full object-cover opacity-60 filter blur-sm absolute"
                 />
@@ -203,6 +243,7 @@ export default function MediaEngine() {
           </div>
         )}
       </AnimatePresence>
+
     </section>
   );
 }

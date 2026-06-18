@@ -21,7 +21,7 @@ export default function CommentaryEngine() {
             </span>
             SECTION 09 // INTEL: INFLUENCE_SYSTEM
           </span>
-          <h2 className="text-4xl md:text-5xl font-black text-platinum tracking-tight uppercase leading-none mb-3">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-platinum tracking-tight uppercase leading-tight mb-3">
             {siteConfig.commentary.title}
           </h2>
           <p className="text-xs font-mono text-gold/70 uppercase tracking-[0.2em] mt-1">
