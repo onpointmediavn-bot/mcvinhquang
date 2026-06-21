@@ -121,7 +121,7 @@ export default function SixdoModule() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
             </span>
-            SECTION 04 // MODULE: SIXDO FASHION SHOW
+            SECTION 03 // MODULE: MC EVENT
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-platinum tracking-tight uppercase leading-tight mb-3">
             {siteConfig.sixdoModule.title}
