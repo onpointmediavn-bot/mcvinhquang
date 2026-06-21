@@ -130,7 +130,7 @@ export default function HoaXuanModule() {
         </div>
 
         {/* Bounding Connected Tactical Grid Panel */}
-        <div className="relative px-2 py-6 md:p-8 border border-charcoal/80 bg-charcoal/20 backdrop-blur-md rounded-sm gold-glow w-full overflow-hidden">
+        <div className="relative px-0 py-4 md:p-8 border-x-0 border-y border-charcoal/80 md:border bg-charcoal/10 md:bg-charcoal/20 backdrop-blur-md rounded-none md:rounded-sm gold-glow w-full overflow-hidden">
           {/* Outer Panel HUD Corner Brackets */}
           <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-gold/50"></div>
           <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-gold/50"></div>
@@ -173,10 +173,10 @@ export default function HoaXuanModule() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="flex flex-col gap-2 md:gap-6 w-full relative z-10"
+            className="flex flex-col gap-1 md:gap-6 w-full relative z-10"
           >
             {/* Top Row (3 images) */}
-            <div className="flex flex-row gap-2 md:gap-6 w-full items-stretch">
+            <div className="flex flex-row gap-1 md:gap-6 w-full items-stretch">
               {images.slice(0, 3).map((img, i) => {
                 const idx = i;
                 const gridClasses = "flex-1 w-0 aspect-[4/3] lg:aspect-auto lg:h-[320px]";
@@ -185,7 +185,7 @@ export default function HoaXuanModule() {
             </div>
 
             {/* Bottom Row (2 images) */}
-            <div className="flex flex-row gap-2 md:gap-6 w-full items-stretch">
+            <div className="flex flex-row gap-1 md:gap-6 w-full items-stretch">
               {images.slice(3, 5).map((img, i) => {
                 const idx = i + 3;
                 const gridClasses = "flex-1 w-0 aspect-video lg:aspect-auto lg:h-[360px]";

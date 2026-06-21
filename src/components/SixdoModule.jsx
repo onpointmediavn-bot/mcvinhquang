@@ -132,7 +132,7 @@ export default function SixdoModule() {
         </div>
 
         {/* Bounding Connected Tactical Grid Panel */}
-        <div className="relative px-2 py-6 md:p-8 border border-charcoal/80 bg-charcoal/20 backdrop-blur-md rounded-sm gold-glow w-full overflow-hidden">
+        <div className="relative px-0 py-4 md:p-8 border-x-0 border-y border-charcoal/80 md:border bg-charcoal/10 md:bg-charcoal/20 backdrop-blur-md rounded-none md:rounded-sm gold-glow w-full overflow-hidden">
           {/* Outer Panel HUD Corner Brackets */}
           <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-gold/50"></div>
           <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-gold/50"></div>
@@ -178,10 +178,10 @@ export default function SixdoModule() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-100px" }}
-            className="flex flex-col gap-2 md:gap-6 w-full relative z-10"
+            className="flex flex-col gap-1 md:gap-6 w-full relative z-10"
           >
             {/* Top Row (2 images: col-span-8 and col-span-4) */}
-            <div className="flex flex-row gap-2 md:gap-6 w-full items-stretch">
+            <div className="flex flex-row gap-1 md:gap-6 w-full items-stretch">
               {images.slice(0, 2).map((img, i) => {
                 const idx = i;
                 const gridClasses = idx === 0 
@@ -192,7 +192,7 @@ export default function SixdoModule() {
             </div>
 
             {/* Bottom Row (4 images: col-span-3 each) */}
-            <div className="flex flex-row gap-2 md:gap-6 w-full items-stretch">
+            <div className="flex flex-row gap-1 md:gap-6 w-full items-stretch">
               {images.slice(2, 6).map((img, i) => {
                 const idx = i + 2;
                 const gridClasses = "flex-1 w-0 aspect-square lg:aspect-auto lg:h-[220px]";
