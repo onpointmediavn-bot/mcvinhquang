@@ -100,7 +100,7 @@ export default function HoaXuanModule() {
   };
 
   return (
-    <section id="hoaxuan-module" className="relative md:min-h-screen w-full bg-graphite flex flex-col justify-center py-12 md:py-20 px-6 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid-fine">
+    <section id="hoaxuan-module" className="relative md:min-h-screen w-full bg-graphite flex flex-col justify-center py-12 md:py-20 px-2 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid-fine">
       {/* Decorative mechanical axis grid */}
       <div className="absolute inset-0 pointer-events-none opacity-15">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-dashed border-gold/10 animate-spin-slow"></div>
@@ -130,7 +130,7 @@ export default function HoaXuanModule() {
         </div>
 
         {/* Bounding Connected Tactical Grid Panel */}
-        <div className="relative p-6 md:p-8 border border-charcoal/80 bg-charcoal/20 backdrop-blur-md rounded-sm gold-glow w-full overflow-hidden">
+        <div className="relative px-2 py-6 md:p-8 border border-charcoal/80 bg-charcoal/20 backdrop-blur-md rounded-sm gold-glow w-full overflow-hidden">
           {/* Outer Panel HUD Corner Brackets */}
           <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-gold/50"></div>
           <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-gold/50"></div>

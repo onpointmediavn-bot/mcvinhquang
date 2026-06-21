@@ -49,7 +49,7 @@ export default function Navbar() {
           : "bg-obsidian/20 backdrop-blur-sm py-6 border-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center w-full">
+      <div className="max-w-7xl mx-auto px-2 md:px-12 flex justify-between items-center w-full">
         {/* Brand Logo / HUD Name */}
         <div 
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -106,7 +106,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden w-full bg-obsidian border-b border-charcoal overflow-hidden px-6 pb-8 pt-4"
+            className="lg:hidden w-full bg-obsidian border-b border-charcoal overflow-hidden px-2 pb-8 pt-4"
           >
             <div className="flex flex-col space-y-4 pt-4 border-t border-charcoal/60">
               {navItems.map((item, index) => (

@@ -25,7 +25,7 @@ export default function MediaEngine() {
   };
 
   return (
-    <section id="media-engine" className="relative md:min-h-screen w-full bg-obsidian flex flex-col justify-center py-12 md:py-20 px-6 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid">
+    <section id="media-engine" className="relative md:min-h-screen w-full bg-obsidian flex flex-col justify-center py-12 md:py-20 px-2 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid">
       <div className="relative z-10 max-w-7xl mx-auto w-full flex flex-col h-full justify-between">
         {/* Section Header */}
         <div className="flex flex-col mb-12 relative pl-6 border-l-2 border-gold/60">
@@ -49,7 +49,7 @@ export default function MediaEngine() {
         </div>
 
         {/* Network Layout Workspace (Visible on both mobile and desktop) */}
-        <div className="relative w-full h-[450px] sm:h-[500px] md:h-[600px] bg-graphite/10 border border-charcoal/80 rounded-sm overflow-hidden flex items-center justify-center p-4">
+        <div className="relative w-full h-[450px] sm:h-[500px] md:h-[600px] bg-graphite/10 border border-charcoal/80 rounded-sm overflow-hidden flex items-center justify-center px-2 py-4 sm:p-4">
 
           {/* Signal Connection Lines SVG */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none" xmlns="http://www.w3.org/2000/svg">

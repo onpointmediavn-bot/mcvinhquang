@@ -41,7 +41,7 @@ export default function ActivationTerminal() {
   };
 
   return (
-    <section id="activation-terminal" className="relative md:min-h-screen w-full bg-obsidian flex flex-col justify-center py-16 md:py-24 px-6 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid">
+    <section id="activation-terminal" className="relative md:min-h-screen w-full bg-obsidian flex flex-col justify-center py-16 md:py-24 px-2 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid">
 
       {/* Golden visual radiation overlay */}
       <div className="absolute inset-0 pointer-events-none opacity-40">
@@ -127,7 +127,7 @@ export default function ActivationTerminal() {
           <div className="lg:col-span-7 flex">
             <form
               onSubmit={handleSubmit}
-              className="w-full metal-panel border border-charcoal flex flex-col justify-between p-6 md:p-8 relative min-h-[420px]"
+              className="w-full metal-panel border border-charcoal flex flex-col justify-between p-4 md:p-8 relative min-h-[420px]"
             >
               <div>
                 {/* Form header visual */}

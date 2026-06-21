@@ -30,7 +30,7 @@ export default function EntryChamber() {
   };
 
   return (
-    <section className="relative md:h-screen min-h-[400px] w-full overflow-hidden bg-obsidian flex flex-col justify-between pt-4 pb-4 px-6 md:p-12 border-b border-charcoal blueprint-grid">
+    <section className="relative md:h-screen min-h-[400px] w-full overflow-hidden bg-obsidian flex flex-col justify-between pt-4 pb-4 px-2 md:p-12 border-b border-charcoal blueprint-grid">
 
       {/* Background Kinetic Systems */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30 select-none">

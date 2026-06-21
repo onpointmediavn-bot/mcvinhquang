@@ -5,7 +5,7 @@ import { siteConfig } from "@/data/content";
 
 export default function CommentaryEngine() {
   return (
-    <section id="commentary-engine" className="relative md:min-h-screen w-full bg-graphite flex flex-col justify-center py-12 md:py-20 px-6 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid-fine">
+    <section id="commentary-engine" className="relative md:min-h-screen w-full bg-graphite flex flex-col justify-center py-12 md:py-20 px-2 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid-fine">
       <div className="relative z-10 max-w-7xl mx-auto w-full">
 
         {/* Section Header */}
@@ -65,7 +65,7 @@ export default function CommentaryEngine() {
               {siteConfig.commentary.articles.map((article, index) => (
                 <div
                   key={index}
-                  className="metal-panel border border-charcoal p-8 relative flex flex-col justify-between hover:border-gold/30 transition-all duration-500 group"
+                  className="metal-panel border border-charcoal p-4 md:p-8 relative flex flex-col justify-between hover:border-gold/30 transition-all duration-500 group"
                 >
                   {/* Decorative quote icon */}
                   <div className="absolute -top-4 -left-4 p-2.5 bg-obsidian border border-charcoal/80 rounded-sm text-gold/30 group-hover:text-gold transition-colors duration-300">

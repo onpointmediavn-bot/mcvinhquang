@@ -17,7 +17,7 @@ export default function EventEngine() {
   ];
 
   return (
-    <section id="event-engine" className="relative md:min-h-screen w-full bg-obsidian flex flex-col justify-center py-12 md:py-20 px-6 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid">
+    <section id="event-engine" className="relative md:min-h-screen w-full bg-obsidian flex flex-col justify-center py-12 md:py-20 px-2 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid">
       <div className="relative z-10 max-w-7xl mx-auto w-full">
         {/* Section Header */}
         <div className="flex flex-col mb-16 relative pl-6 border-l-2 border-gold/60">
@@ -192,7 +192,7 @@ export default function EventEngine() {
               </AnimatePresence>
 
               {/* Data readouts */}
-              <div className="p-6 md:p-8 flex-grow flex flex-col justify-between">
+              <div className="p-4 md:p-8 flex-grow flex flex-col justify-between">
                 <div>
                   <div className="flex justify-between items-center mb-4">
                     <span className="font-mono text-xs text-gold font-bold tracking-widest uppercase">
