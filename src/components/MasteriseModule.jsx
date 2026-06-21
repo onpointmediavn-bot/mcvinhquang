@@ -225,7 +225,18 @@ export default function MasteriseModule() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.98 }}
                   transition={{ duration: 0.3 }}
-                  className="max-h-[75vh] max-w-full md:max-w-6xl object-contain border border-charcoal/60 rounded-sm shadow-2xl z-10"
+                  drag="x"
+                  dragConstraints={{ left: 0, right: 0 }}
+                  dragElastic={0.6}
+                  onDragEnd={(e, info) => {
+                    const swipeThreshold = 50;
+                    if (info.offset.x < -swipeThreshold) {
+                      handleNext(e);
+                    } else if (info.offset.x > swipeThreshold) {
+                      handlePrev(e);
+                    }
+                  }}
+                  className="max-h-[75vh] max-w-full md:max-w-6xl object-contain border border-charcoal/60 rounded-sm shadow-2xl z-10 cursor-grab active:cursor-grabbing"
                   onClick={(e) => e.stopPropagation()}
                 />
               </AnimatePresence>
