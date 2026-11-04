@@ -124,9 +124,9 @@ export default function MoreRealEstateModule() {
   // Short labels for 9 projects
   const shortTitles = [
     "SHOSHIN",
-    "REGAL LEGEND",
+    "CENLAND",
     "SUN ELITE",
-    "CENTRAL RESIDENCE",
+    "RAMON URBANIZ",
     "LUMERA CITY",
     "HIMLAM BLVD",
     "THANH HÀ",

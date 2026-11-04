@@ -272,10 +272,10 @@ export const siteConfig = {
       subtitle: "LỄ KHÁNH THÀNH & KHỞI ĐẦU CHẶNG ĐƯỜNG MỚI",
       description: "Dẫn dắt sự kiện trang trọng khánh thành nhà máy Techvina tại Hưng Yên. Sự kiện đòi hỏi phong thái dẫn chỉn chu, đĩnh đạc, tuân thủ đúng nghi thức ngoại giao và vinh danh đối tác, cổ đông.",
       images: [
-        "images/MC VQ Event/Khánh thành nhà máy. Hưng Yên Techvina/B-14.webp",
-        "images/MC VQ Event/Khánh thành nhà máy. Hưng Yên Techvina/B-230.webp",
-        "images/MC VQ Event/Khánh thành nhà máy. Hưng Yên Techvina/B-387.webp",
-        "images/MC VQ Event/Khánh thành nhà máy. Hưng Yên Techvina/B-67.webp"
+        "images/more-events/techvina/B-14.webp",
+        "images/more-events/techvina/B-230.webp",
+        "images/more-events/techvina/B-387.webp",
+        "images/more-events/techvina/B-67.webp"
       ]
     },
     {
@@ -306,25 +306,25 @@ export const siteConfig = {
       subtitle: "ĐÀO TẠO & THUYẾT TRÌNH DỰ ÁN NGHỈ DƯỠNG CAO CẤP",
       description: "Đảm nhận vai trò Diễn giả thuyết trình giới thiệu dự án nghỉ dưỡng Shoshin Bình Thanh. Truyền tải trọn vẹn concept thiết kế độc đáo, tiềm năng sinh lời vượt trội và giá trị sống thượng lưu đến hàng trăm khách hàng và chuyên viên kinh doanh.",
       images: [
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/1.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/LP__5662.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/PT_02611.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/PT_02617.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/PT_02678.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/PT_02689.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/PT_02697.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/PT_02713.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/PT_03014.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/PT_03018.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/PT_03036.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/PT_03045.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/PT_03048.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/PT_03053.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/PT_03078.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/WPT_02575.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/wPT_02602.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/wPT_02721.webp",
-        "images/MC VINH QUANG BĐS/3. Thuyết trình - Shoshin Bình Thanh/wPT_02943.webp"
+        "images/more-real-estate/shoshin-binh-thanh/1.webp",
+        "images/more-real-estate/shoshin-binh-thanh/LP__5662.webp",
+        "images/more-real-estate/shoshin-binh-thanh/PT_02611.webp",
+        "images/more-real-estate/shoshin-binh-thanh/PT_02617.webp",
+        "images/more-real-estate/shoshin-binh-thanh/PT_02678.webp",
+        "images/more-real-estate/shoshin-binh-thanh/PT_02689.webp",
+        "images/more-real-estate/shoshin-binh-thanh/PT_02697.webp",
+        "images/more-real-estate/shoshin-binh-thanh/PT_02713.webp",
+        "images/more-real-estate/shoshin-binh-thanh/PT_03014.webp",
+        "images/more-real-estate/shoshin-binh-thanh/PT_03018.webp",
+        "images/more-real-estate/shoshin-binh-thanh/PT_03036.webp",
+        "images/more-real-estate/shoshin-binh-thanh/PT_03045.webp",
+        "images/more-real-estate/shoshin-binh-thanh/PT_03048.webp",
+        "images/more-real-estate/shoshin-binh-thanh/PT_03053.webp",
+        "images/more-real-estate/shoshin-binh-thanh/PT_03078.webp",
+        "images/more-real-estate/shoshin-binh-thanh/WPT_02575.webp",
+        "images/more-real-estate/shoshin-binh-thanh/wPT_02602.webp",
+        "images/more-real-estate/shoshin-binh-thanh/wPT_02721.webp",
+        "images/more-real-estate/shoshin-binh-thanh/wPT_02943.webp"
       ]
     },
     {
@@ -333,12 +333,12 @@ export const siteConfig = {
       subtitle: "TALKSHOW CHUYÊN SÂU CÙNG CÁC CHUYÊN GIA",
       description: "Đóng vai trò Host điều phối buổi tọa đàm chuyên sâu của Cenland. Kết nối các chuyên gia đầu ngành để chia sẻ góc nhìn thị trường, phân tích tiềm năng bất động sản và gỡ rối thắc mắc cho nhà đầu tư.",
       images: [
-        "images/MC VINH QUANG BĐS/4. Tọa đàm Cenland/481468624_122140665758429974_608318135182844615_n.webp",
-        "images/MC VINH QUANG BĐS/4. Tọa đàm Cenland/481671038_122140665794429974_6811541708469482380_n.webp",
-        "images/MC VINH QUANG BĐS/4. Tọa đàm Cenland/481684716_122140665458429974_3054495889059115405_n.webp",
-        "images/MC VINH QUANG BĐS/4. Tọa đàm Cenland/481777812_122140665356429974_2397545411233657646_n.webp",
-        "images/MC VINH QUANG BĐS/4. Tọa đàm Cenland/481904403_122140665590429974_3823934140899171998_n.webp",
-        "images/MC VINH QUANG BĐS/4. Tọa đàm Cenland/482005600_122140665872429974_7507007849158771493_n.webp"
+        "images/more-real-estate/toa-dam-cenland/481468624_122140665758429974_608318135182844615_n.webp",
+        "images/more-real-estate/toa-dam-cenland/481671038_122140665794429974_6811541708469482380_n.webp",
+        "images/more-real-estate/toa-dam-cenland/481684716_122140665458429974_3054495889059115405_n.webp",
+        "images/more-real-estate/toa-dam-cenland/481777812_122140665356429974_2397545411233657646_n.webp",
+        "images/more-real-estate/toa-dam-cenland/481904403_122140665590429974_3823934140899171998_n.webp",
+        "images/more-real-estate/toa-dam-cenland/482005600_122140665872429974_7507007849158771493_n.webp"
       ]
     },
     {
@@ -347,14 +347,14 @@ export const siteConfig = {
       subtitle: "LỄ RA QUÂN DỰ ÁN QUY MÔ & HOÀNH TRÁNG",
       description: "Dẫn dắt Lễ ra quân (Kick-off) dự án Sun Elite City. Sự kiện rực lửa năng lượng, quy tụ hàng nghìn chiến binh kinh doanh từ nhiều đại lý phân phối, kích hoạt tinh thần chiến đấu mạnh mẽ.",
       images: [
-        "images/MC VINH QUANG BĐS/KICK OFF SUN ELITE CITY/1/1.webp",
-        "images/MC VINH QUANG BĐS/KICK OFF SUN ELITE CITY/1/2.webp",
-        "images/MC VINH QUANG BĐS/KICK OFF SUN ELITE CITY/1/3.webp",
-        "images/MC VINH QUANG BĐS/KICK OFF SUN ELITE CITY/1/4.webp",
-        "images/MC VINH QUANG BĐS/KICK OFF SUN ELITE CITY/1/5.webp",
-        "images/MC VINH QUANG BĐS/KICK OFF SUN ELITE CITY/1/6.webp",
-        "images/MC VINH QUANG BĐS/KICK OFF SUN ELITE CITY/1/7.webp",
-        "images/MC VINH QUANG BĐS/KICK OFF SUN ELITE CITY/1/NA_09491.webp"
+        "images/more-real-estate/sun-elite-city/1.webp",
+        "images/more-real-estate/sun-elite-city/2.webp",
+        "images/more-real-estate/sun-elite-city/3.webp",
+        "images/more-real-estate/sun-elite-city/4.webp",
+        "images/more-real-estate/sun-elite-city/5.webp",
+        "images/more-real-estate/sun-elite-city/6.webp",
+        "images/more-real-estate/sun-elite-city/7.webp",
+        "images/more-real-estate/sun-elite-city/NA_09491.webp"
       ]
     },
     {
@@ -363,12 +363,12 @@ export const siteConfig = {
       subtitle: "SỰ KIỆN KHỞI CÔNG DỰ ÁN TRỌNG ĐIỂM",
       description: "Làm chủ sân khấu Lễ khởi công tổ hợp thương mại & nghỉ dưỡng Ramon Urbaniz tại Đồ Sơn. Sự kiện có sự góp mặt của lãnh đạo địa phương, chủ đầu tư và đối tác lớn, đòi hỏi nghi thức trang trọng và chuyên nghiệp.",
       images: [
-        "images/MC VINH QUANG BĐS/Khởi công Ramon Urbaniz Đồ Sơn/DJI_20251204142354_0052_D.webp",
-        "images/MC VINH QUANG BĐS/Khởi công Ramon Urbaniz Đồ Sơn/N_P03255.webp",
-        "images/MC VINH QUANG BĐS/Khởi công Ramon Urbaniz Đồ Sơn/N_P03262.webp",
-        "images/MC VINH QUANG BĐS/Khởi công Ramon Urbaniz Đồ Sơn/N_P03352.webp",
-        "images/MC VINH QUANG BĐS/Khởi công Ramon Urbaniz Đồ Sơn/N_P03599.webp",
-        "images/MC VINH QUANG BĐS/Khởi công Ramon Urbaniz Đồ Sơn/N_P03636.webp"
+        "images/more-real-estate/ramon-urbaniz/DJI_20251204142354_0052_D.webp",
+        "images/more-real-estate/ramon-urbaniz/N_P03255.webp",
+        "images/more-real-estate/ramon-urbaniz/N_P03262.webp",
+        "images/more-real-estate/ramon-urbaniz/N_P03352.webp",
+        "images/more-real-estate/ramon-urbaniz/N_P03599.webp",
+        "images/more-real-estate/ramon-urbaniz/N_P03636.webp"
       ]
     },
     {
@@ -377,10 +377,10 @@ export const siteConfig = {
       subtitle: "LỄ ĐỘNG THỔ & KHỞI CÔNG DỰ ÁN ĐẲNG CẤP DƯƠNG ĐÔNG",
       description: "Dẫn dắt Lễ khởi công dự án Lumera City Phú Quốc của tập đoàn Sơn Phúc. Đảm bảo đúng tiến trình nghi lễ trang trọng, truyền đạt trọn vẹn thông điệp kiến tạo biểu tượng giao thương mới tại đảo ngọc.",
       images: [
-        "images/MC VINH QUANG BĐS/Khởi công Sơn Phúc LUMERA CITY/1 (33).webp",
-        "images/MC VINH QUANG BĐS/Khởi công Sơn Phúc LUMERA CITY/VCS-03248.webp",
-        "images/MC VINH QUANG BĐS/Khởi công Sơn Phúc LUMERA CITY/VCS-03378.webp",
-        "images/MC VINH QUANG BĐS/Khởi công Sơn Phúc LUMERA CITY/VCS-03477.webp"
+        "images/more-real-estate/lumera-city/1 (33).webp",
+        "images/more-real-estate/lumera-city/VCS-03248.webp",
+        "images/more-real-estate/lumera-city/VCS-03378.webp",
+        "images/more-real-estate/lumera-city/VCS-03477.webp"
       ]
     },
     {
@@ -389,13 +389,13 @@ export const siteConfig = {
       subtitle: "ĐẠI HỘI RA QUÂN DỰ ÁN ĐÔ THỊ ĐẲNG CẤP",
       description: "Dẫn dắt lễ ra quân dự án HimLam Boulevard. Đốt cháy ngọn lửa nhiệt huyết của hàng trăm chiến binh Sales, truyền cảm hứng và thông tin dự án một cách sinh động, cuốn hút.",
       images: [
-        "images/MC VINH QUANG BĐS/Kick off HimLam Boulevard/468603382_920053290271947_2501916587760623118_n.webp",
-        "images/MC VINH QUANG BĐS/Kick off HimLam Boulevard/468617530_920052263605383_6216323948497932166_n.webp",
-        "images/MC VINH QUANG BĐS/Kick off HimLam Boulevard/468645299_3363736013760949_7744592591078847843_n.webp",
-        "images/MC VINH QUANG BĐS/Kick off HimLam Boulevard/468646886_920052223605387_1453258972477910472_n.webp",
-        "images/MC VINH QUANG BĐS/Kick off HimLam Boulevard/468698446_920052916938651_3776338202589465825_n.webp",
-        "images/MC VINH QUANG BĐS/Kick off HimLam Boulevard/468700812_920049790272297_131862125183099907_n.webp",
-        "images/MC VINH QUANG BĐS/Kick off HimLam Boulevard/468834851_920052446938698_7927307079207063713_n.webp"
+        "images/more-real-estate/himlam-boulevard/468603382_920053290271947_2501916587760623118_n.webp",
+        "images/more-real-estate/himlam-boulevard/468617530_920052263605383_6216323948497932166_n.webp",
+        "images/more-real-estate/himlam-boulevard/468645299_3363736013760949_7744592591078847843_n.webp",
+        "images/more-real-estate/himlam-boulevard/468646886_920052223605387_1453258972477910472_n.webp",
+        "images/more-real-estate/himlam-boulevard/468698446_920052916938651_3776338202589465825_n.webp",
+        "images/more-real-estate/himlam-boulevard/468700812_920049790272297_131862125183099907_n.webp",
+        "images/more-real-estate/himlam-boulevard/468834851_920052446938698_7927307079207063713_n.webp"
       ]
     },
     {
@@ -404,17 +404,17 @@ export const siteConfig = {
       subtitle: "HỘI NGHỊ GIỚI THIỆU & PHÂN TÍCH CHUYÊN SÂU DỰ ÁN",
       description: "Thuyết trình chuyên sâu và phân tích cơ hội đầu tư dự án Thanh Hà New City. Giúp khách hàng hiểu rõ giá trị thực, hạ tầng đồng bộ và quy hoạch chiến lược của khu đô thị kiểu mẫu.",
       images: [
-        "images/MC VINH QUANG BĐS/MC- Thuyết trình Thanh Hà Newcity/TUN_7966.webp",
-        "images/MC VINH QUANG BĐS/MC- Thuyết trình Thanh Hà Newcity/TUN_7968.webp",
-        "images/MC VINH QUANG BĐS/MC- Thuyết trình Thanh Hà Newcity/TUN_8034.webp",
-        "images/MC VINH QUANG BĐS/MC- Thuyết trình Thanh Hà Newcity/TUN_8060.webp",
-        "images/MC VINH QUANG BĐS/MC- Thuyết trình Thanh Hà Newcity/TUN_8078.webp",
-        "images/MC VINH QUANG BĐS/MC- Thuyết trình Thanh Hà Newcity/TUN_8235.webp",
-        "images/MC VINH QUANG BĐS/MC- Thuyết trình Thanh Hà Newcity/TUN_8243.webp",
-        "images/MC VINH QUANG BĐS/MC- Thuyết trình Thanh Hà Newcity/TUN_8270.webp",
-        "images/MC VINH QUANG BĐS/MC- Thuyết trình Thanh Hà Newcity/TUN_8352.webp",
-        "images/MC VINH QUANG BĐS/MC- Thuyết trình Thanh Hà Newcity/TUN_8354.webp",
-        "images/MC VINH QUANG BĐS/MC- Thuyết trình Thanh Hà Newcity/TUN_8497.webp"
+        "images/more-real-estate/thanh-ha-newcity/TUN_7966.webp",
+        "images/more-real-estate/thanh-ha-newcity/TUN_7968.webp",
+        "images/more-real-estate/thanh-ha-newcity/TUN_8034.webp",
+        "images/more-real-estate/thanh-ha-newcity/TUN_8060.webp",
+        "images/more-real-estate/thanh-ha-newcity/TUN_8078.webp",
+        "images/more-real-estate/thanh-ha-newcity/TUN_8235.webp",
+        "images/more-real-estate/thanh-ha-newcity/TUN_8243.webp",
+        "images/more-real-estate/thanh-ha-newcity/TUN_8270.webp",
+        "images/more-real-estate/thanh-ha-newcity/TUN_8352.webp",
+        "images/more-real-estate/thanh-ha-newcity/TUN_8354.webp",
+        "images/more-real-estate/thanh-ha-newcity/TUN_8497.webp"
       ]
     },
     {
@@ -423,19 +423,19 @@ export const siteConfig = {
       subtitle: "HỘI NGHỊ KHÁCH HÀNG & PHÂN TÍCH THỊ TRƯỜNG",
       description: "Dẫn dắt và trực tiếp thuyết trình giới thiệu dự án căn hộ/nhà phố Vinh Residence. Bằng chất giọng truyền cảm và phong thái đĩnh đạc, vẽ lên bức tranh sinh động về không gian sống tương lai và cơ hội sinh lời an toàn.",
       images: [
-        "images/MC VINH QUANG BĐS/MC-Thuyết trình - VINH RESIDENCE/1.webp",
-        "images/MC VINH QUANG BĐS/MC-Thuyết trình - VINH RESIDENCE/2.webp",
-        "images/MC VINH QUANG BĐS/MC-Thuyết trình - VINH RESIDENCE/523112378_733434379611084_2572569631058903116_n.webp",
-        "images/MC VINH QUANG BĐS/MC-Thuyết trình - VINH RESIDENCE/523280125_733432429611279_984955765555195804_n.webp",
-        "images/MC VINH QUANG BĐS/MC-Thuyết trình - VINH RESIDENCE/523327577_733434089611113_2644028476322034826_n.webp",
-        "images/MC VINH QUANG BĐS/MC-Thuyết trình - VINH RESIDENCE/523422050_733434279611094_1168048982644832462_n.webp",
-        "images/MC VINH QUANG BĐS/MC-Thuyết trình - VINH RESIDENCE/523913194_733432549611267_381665346945546038_n.webp",
-        "images/MC VINH QUANG BĐS/MC-Thuyết trình - VINH RESIDENCE/524138292_733429316278257_9087505752181584204_n.webp",
-        "images/MC VINH QUANG BĐS/MC-Thuyết trình - VINH RESIDENCE/524425447_733432379611284_3354405673284878819_n.webp",
-        "images/MC VINH QUANG BĐS/MC-Thuyết trình - VINH RESIDENCE/6Z2A9558.webp",
-        "images/MC VINH QUANG BĐS/MC-Thuyết trình - VINH RESIDENCE/6Z2A9670.webp",
-        "images/MC VINH QUANG BĐS/MC-Thuyết trình - VINH RESIDENCE/6Z2A9685.webp",
-        "images/MC VINH QUANG BĐS/MC-Thuyết trình - VINH RESIDENCE/6Z2A9815.webp"
+        "images/more-real-estate/vinh-residence/1.webp",
+        "images/more-real-estate/vinh-residence/2.webp",
+        "images/more-real-estate/vinh-residence/523112378_733434379611084_2572569631058903116_n.webp",
+        "images/more-real-estate/vinh-residence/523280125_733432429611279_984955765555195804_n.webp",
+        "images/more-real-estate/vinh-residence/523327577_733434089611113_2644028476322034826_n.webp",
+        "images/more-real-estate/vinh-residence/523422050_733434279611094_1168048982644832462_n.webp",
+        "images/more-real-estate/vinh-residence/523913194_733432549611267_381665346945546038_n.webp",
+        "images/more-real-estate/vinh-residence/524138292_733429316278257_9087505752181584204_n.webp",
+        "images/more-real-estate/vinh-residence/524425447_733432379611284_3354405673284878819_n.webp",
+        "images/more-real-estate/vinh-residence/6Z2A9558.webp",
+        "images/more-real-estate/vinh-residence/6Z2A9670.webp",
+        "images/more-real-estate/vinh-residence/6Z2A9685.webp",
+        "images/more-real-estate/vinh-residence/6Z2A9815.webp"
       ]
     },
     {
@@ -444,11 +444,11 @@ export const siteConfig = {
       subtitle: "ĐẠI ĐÔ THỊ NGHỈ DƯỠNG CỦA SUN GROUP TẠI HÀ NAM",
       description: "Dẫn dắt Lễ giới thiệu & Mở bán chính thức phân khu dự án đại đô thị Sun Urban City Hà Nam. Mang tới không khí sôi động, hấp dẫn và thúc đẩy quyết định đầu tư nhanh chóng của khách hàng.",
       images: [
-        "images/MC VINH QUANG BĐS/Sun Urban city/SKY01944.webp",
-        "images/MC VINH QUANG BĐS/Sun Urban city/SKY01947.webp",
-        "images/MC VINH QUANG BĐS/Sun Urban city/SKY01975.webp",
-        "images/MC VINH QUANG BĐS/Sun Urban city/z6534037159240_dd4842741f3a3915998d74ab119229d7.webp",
-        "images/MC VINH QUANG BĐS/Sun Urban city/z6534037408784_b09198a6d9d8d2fdd8d5fd82304df3b2.webp"
+        "images/more-real-estate/sun-urban-city/SKY01944.webp",
+        "images/more-real-estate/sun-urban-city/SKY01947.webp",
+        "images/more-real-estate/sun-urban-city/SKY01975.webp",
+        "images/more-real-estate/sun-urban-city/z6534037159240_dd4842741f3a3915998d74ab119229d7.webp",
+        "images/more-real-estate/sun-urban-city/z6534037408784_b09198a6d9d8d2fdd8d5fd82304df3b2.webp"
       ]
     }
   ],
