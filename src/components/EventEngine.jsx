@@ -174,6 +174,8 @@ export default function EventEngine() {
                   <img 
                     src={siteConfig.strengths.list[activeModule].image} 
                     alt={siteConfig.strengths.list[activeModule].title} 
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover opacity-90 hover:opacity-100 transition-all duration-700"
                   />
                   {/* Grid Lines Overlay */}

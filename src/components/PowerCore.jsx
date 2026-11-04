@@ -63,6 +63,8 @@ export default function PowerCore() {
                 <img 
                   src={siteConfig.about.portrait} 
                   alt="MC Vinh Quang Portrait" 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/10 to-transparent"></div>

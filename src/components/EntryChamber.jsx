@@ -96,6 +96,9 @@ export default function EntryChamber() {
                 <img
                   src={`/${siteConfig.hero.backgroundImage}`}
                   alt="MC Vinh Quang Portrait"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                   className="w-full h-full object-cover object-[40%_center] opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
                 />
                 

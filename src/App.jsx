@@ -3,10 +3,12 @@ import EntryChamber from "@/components/EntryChamber";
 import PowerCore from "@/components/PowerCore";
 import CustomModule from "@/components/CustomModule";
 import SixdoModule from "@/components/SixdoModule";
+import MoreEventsModule from "@/components/MoreEventsModule";
 import RealEstateEngine from "@/components/RealEstateEngine";
 import SymphonyModule from "@/components/SymphonyModule";
 import HoaXuanModule from "@/components/HoaXuanModule";
 import MasteriseModule from "@/components/MasteriseModule";
+import MoreRealEstateModule from "@/components/MoreRealEstateModule";
 import MediaEngine from "@/components/MediaEngine";
 import CommentaryEngine from "@/components/CommentaryEngine";
 import ImpactArchive from "@/components/ImpactArchive";
@@ -30,6 +32,9 @@ export default function App() {
       {/* 4. SIXDO FASHION SHOW MODULE */}
       <SixdoModule />
 
+      {/* 4.5. ARCHIVED TRANSMISSIONS (MORE EVENTS) */}
+      <MoreEventsModule />
+
       {/* 5. REAL ESTATE ENGINE */}
       <RealEstateEngine />
 
@@ -42,16 +47,16 @@ export default function App() {
       {/* 8. MASTERISE STAR CLUB MODULE */}
       <MasteriseModule />
 
+      {/* 8.5. ARCHIVED REAL ESTATE TRANSMISSIONS (MORE PROJECTS) */}
+      <MoreRealEstateModule />
+
       {/* 9. MEDIA TRANSMISSION ENGINE */}
       <MediaEngine />
 
       {/* 10. COMMENTARY ENGINE */}
       <CommentaryEngine />
 
-      {/* 11. IMPACT ARCHIVE */}
-      <ImpactArchive />
-
-      {/* 12. ACTIVATION TERMINAL */}
+      {/* 11. ACTIVATION TERMINAL */}
       <ActivationTerminal />
     </div>
   );

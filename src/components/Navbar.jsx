@@ -20,8 +20,7 @@ export default function Navbar() {
     { label: "MC EVENT", target: "custom-module" },
     { label: "MC BẤT ĐỘNG SẢN", target: "real-estate-engine" },
     { label: "MC TRUYỀN HÌNH", target: "commentary-engine" },
-    { label: "MC REVIEW & LIVESTREAM", target: "media-engine" },
-    { label: "VIDEO", target: "impact-archive" }
+    { label: "DANH SÁCH VIDEO", target: "media-engine" }
   ];
 
   const handleScroll = (id) => {

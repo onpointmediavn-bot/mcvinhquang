@@ -148,3 +148,61 @@ h1, h2, h3, h4, h5, h6 {
   border: 1px solid rgba(232, 232, 232, 0.08);
   border-radius: 4px;
 }
+
+/* Luxury Shimmer Border Animation */
+@keyframes luxury-border-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.luxury-border-glow {
+  position: absolute;
+  inset: -1.5px;
+  border-radius: 9px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.luxury-border-glow::before {
+  content: '';
+  position: absolute;
+  top: -60%;
+  left: -60%;
+  width: 220%;
+  height: 220%;
+  background: conic-gradient(
+    from 0deg,
+    rgba(213, 182, 122, 0.08) 0deg,
+    rgba(213, 182, 122, 0.15) 60deg,
+    rgba(255, 242, 210, 0.5) 120deg,
+    #FFF8E7 170deg,
+    #E8CA8C 180deg,
+    #FFF8E7 190deg,
+    rgba(255, 242, 210, 0.5) 240deg,
+    rgba(213, 182, 122, 0.15) 300deg,
+    rgba(213, 182, 122, 0.08) 360deg
+  );
+  animation: luxury-border-spin 3.2s linear infinite;
+  filter: drop-shadow(0 0 8px rgba(213, 182, 122, 0.65));
+}
+
+.luxury-border-glow,
+.luxury-border-glow::before,
+.luxury-border-glow::after {
+  pointer-events: none !important;
+}
+
+.luxury-border-glow::after {
+  content: '';
+  position: absolute;
+  inset: 1.5px;
+  background: #0E0E10;
+  border-radius: 7.5px;
+  z-index: 1;
+  pointer-events: none !important;
+}
