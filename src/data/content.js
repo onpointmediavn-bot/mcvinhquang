@@ -151,38 +151,52 @@ export const siteConfig = {
     videos: [
       {
         id: 1,
-        title: "BẢN TIN MC TRUYỀN HÌNH",
-        duration: "03:15",
-        aspectRatio: "16:9",
-        videoUrl: "https://drive.google.com/file/d/1ltd2qnDW65F9yFDZF3wWLbztuwaq9P39/preview"
+        title: "BOOKING KHỦNG SYMPHONY 5 ĐÀ NẴNG",
+        duration: "00:45",
+        aspectRatio: "9:16",
+        videoUrl: "https://www.youtube.com/embed/SWQy0j6_qVg"
       },
       {
         id: 2,
-        title: "REVIEW SẢN PHẨM",
+        title: "MIK GROUP RV THE PARKLAND",
+        duration: "00:50",
+        aspectRatio: "9:16",
+        videoUrl: "https://www.youtube.com/embed/s50dj9QSe-w"
+      },
+      {
+        id: 3,
+        title: "BẢN TIN THỜI SỰ 23H",
+        duration: "03:15",
+        aspectRatio: "16:9",
+        videoUrl: "https://www.youtube.com/embed/Qqtd514hYH8"
+      },
+      {
+        id: 4,
+        title: "THUYẾT TRÌNH THÁI ĐÀO RESIDENCE",
         duration: "03:12",
         aspectRatio: "16:9",
         videoUrl: "https://www.youtube.com/embed/SUj-GF4Kdw0"
       },
       {
-        id: 3,
-        title: "TRẢI NGHIỆM THỰC TẾ",
+        id: 5,
+        title: "GAMESHOW - MINIGAME GALA DINNER",
+        duration: "02:40",
+        aspectRatio: "16:9",
+        videoUrl: "https://www.youtube.com/embed/-7Ppen2ZUfw"
+      },
+      {
+        id: 6,
+        title: "THỜI SỰ 23H - ĐÀI HÀ NỘI",
+        duration: "02:15",
+        aspectRatio: "16:9",
+        videoUrl: "https://www.youtube.com/embed/aIaFmQcUboU"
+      },
+      {
+        id: 7,
+        title: "REVIEW XANH ISLAND",
         duration: "04:45",
         aspectRatio: "16:9",
         videoUrl: "https://www.youtube.com/embed/l6TTXu3KvyI"
-      },
-      {
-        id: 4,
-        title: "SỰ KIỆN KICK-OFF & VINH DANH",
-        duration: "02:50",
-        aspectRatio: "16:9",
-        videoUrl: "https://www.youtube.com/embed/1JCzBQQC-fQ"
-      },
-      {
-        id: 5,
-        title: "VJ SHORTS TRUYỀN THÔNG",
-        duration: "00:59",
-        aspectRatio: "9:16",
-        videoUrl: "https://www.youtube.com/embed/ePhvMNiioEA"
       }
     ]
   },
