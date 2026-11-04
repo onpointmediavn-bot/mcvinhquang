@@ -444,11 +444,11 @@ export const siteConfig = {
       subtitle: "ĐẠI ĐÔ THỊ NGHỈ DƯỠNG CỦA SUN GROUP TẠI HÀ NAM",
       description: "Dẫn dắt Lễ giới thiệu & Mở bán chính thức phân khu dự án đại đô thị Sun Urban City Hà Nam. Mang tới không khí sôi động, hấp dẫn và thúc đẩy quyết định đầu tư nhanh chóng của khách hàng.",
       images: [
-        "images/more-real-estate/sun-urban-city/SKY01944.webp",
-        "images/more-real-estate/sun-urban-city/SKY01947.webp",
-        "images/more-real-estate/sun-urban-city/SKY01975.webp",
-        "images/more-real-estate/sun-urban-city/z6534037159240_dd4842741f3a3915998d74ab119229d7.webp",
-        "images/more-real-estate/sun-urban-city/z6534037408784_b09198a6d9d8d2fdd8d5fd82304df3b2.webp"
+        "images/more-real-estate/sun-urban-city/sun-urban-1.webp",
+        "images/more-real-estate/sun-urban-city/sun-urban-2.webp",
+        "images/more-real-estate/sun-urban-city/sun-urban-3.webp",
+        "images/more-real-estate/sun-urban-city/sun-urban-4.webp",
+        "images/more-real-estate/sun-urban-city/sun-urban-5.webp"
       ]
     }
   ],
