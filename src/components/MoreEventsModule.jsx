@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Terminal, Eye, X, ChevronLeft, ChevronRight, Maximize2, Activity } from "lucide-react";
+import { motion } from "framer-motion";
+import { Terminal, Eye, Maximize2, Activity } from "lucide-react";
 import { siteConfig } from "@/data/content";
+import LightboxModal from "@/components/common/LightboxModal";
 
 export default function MoreEventsModule() {
   const [activeTab, setActiveTab] = useState(0);
@@ -25,33 +26,14 @@ export default function MoreEventsModule() {
     return () => clearInterval(timer);
   }, [isHovered, selectedImg, events.length]);
 
-  // Close lightbox on escape keypress
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        setSelectedImg(null);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
-
   const handlePrev = (e) => {
-    e.stopPropagation();
+    if (e && e.stopPropagation) e.stopPropagation();
     setSelectedImg((prev) => (prev - 1 + images.length) % images.length);
   };
 
   const handleNext = (e) => {
-    e.stopPropagation();
+    if (e && e.stopPropagation) e.stopPropagation();
     setSelectedImg((prev) => (prev + 1) % images.length);
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.08 }
-    }
   };
 
   const itemVariants = {
@@ -282,118 +264,17 @@ export default function MoreEventsModule() {
         </div>
       </div>
 
-      {/* Cinematic Full-screen Lightbox Modal (Đơn giản, chuẩn xác như CustomModule) */}
-      <AnimatePresence>
-        {selectedImg !== null && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-obsidian/95 backdrop-blur-xl flex flex-col justify-between p-4 md:p-8"
-            onClick={() => setSelectedImg(null)}
-          >
-            {/* Modal Header */}
-            <div className="w-full flex justify-between items-center border-b border-charcoal/80 pb-4 font-mono text-xs z-10">
-              <div className="flex items-center space-x-3 text-gold">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
-                </span>
-                <span className="font-bold uppercase tracking-wider">
-                  CINEMATIC_FEED // {currentEvent.id.toUpperCase()}_HQ_DISPLAY
-                </span>
-              </div>
-              <button 
-                type="button"
-                onClick={() => setSelectedImg(null)}
-                className="flex items-center space-x-2 text-platinum/60 hover:text-gold transition-colors cursor-pointer group focus:outline-none"
-              >
-                <span>[ESC_CLOSE]</span>
-                <X size={16} className="group-hover:rotate-90 transition-transform duration-300" />
-              </button>
-            </div>
-
-            {/* Modal Center Image Display (Maximized uncropped sizing) */}
-            <div className="relative flex-grow w-full flex items-center justify-center my-4 z-10">
-              <motion.img 
-                key={`${activeTab}-${selectedImg}`}
-                src={`/${images[selectedImg]}`} 
-                alt={`${currentEvent.title} Lightbox ${selectedImg + 1}`}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.6}
-                onDragEnd={(e, info) => {
-                  const swipeThreshold = 50;
-                  if (info.offset.x < -swipeThreshold) {
-                    handleNext(e);
-                  } else if (info.offset.x > swipeThreshold) {
-                    handlePrev(e);
-                  }
-                }}
-                className="max-h-[75vh] max-w-full md:max-w-6xl object-contain border border-charcoal/60 rounded-sm shadow-2xl z-10 cursor-grab active:cursor-grabbing"
-                onClick={(e) => e.stopPropagation()}
-              />
-
-              {/* Navigation overlays */}
-              {images.length > 1 && (
-                <>
-                  <button
-                    type="button"
-                    onClick={handlePrev}
-                    className="absolute left-2 md:left-6 z-20 p-3 bg-obsidian/85 border border-gold/40 text-gold hover:text-warmwhite hover:bg-gold/25 transition-all rounded-full cursor-pointer focus:outline-none shadow-[0_0_20px_rgba(0,0,0,0.8)]"
-                    aria-label="Previous Image"
-                  >
-                    <ChevronLeft size={24} />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleNext}
-                    className="absolute right-2 md:right-6 z-20 p-3 bg-obsidian/85 border border-gold/40 text-gold hover:text-warmwhite hover:bg-gold/25 transition-all rounded-full cursor-pointer focus:outline-none shadow-[0_0_20px_rgba(0,0,0,0.8)]"
-                    aria-label="Next Image"
-                  >
-                    <ChevronRight size={24} />
-                  </button>
-                </>
-              )}
-            </div>
-
-            {/* Thumbnail Strip for fast clicking / sliding through images */}
-            {images.length > 1 && (
-              <div 
-                className="w-full flex items-center justify-center gap-2 overflow-x-auto py-2 px-4 z-20"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {images.map((img, thumbIdx) => (
-                  <button
-                    type="button"
-                    key={thumbIdx}
-                    onClick={() => setSelectedImg(thumbIdx)}
-                    className={`relative shrink-0 w-12 h-12 md:w-16 md:h-16 rounded overflow-hidden border transition-all cursor-pointer ${
-                      selectedImg === thumbIdx
-                        ? "border-gold shadow-[0_0_10px_#D5B67A] scale-105"
-                        : "border-white/10 opacity-50 hover:opacity-90"
-                    }`}
-                  >
-                    <img 
-                      src={`/${img}`} 
-                      alt={`Thumb ${thumbIdx + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </button>
-                ))}
-              </div>
-            )}
-
-            {/* Modal Footer */}
-            <div className="w-full border-t border-charcoal/80 pt-4 font-mono text-[9px] text-platinum/40 flex justify-between items-center z-10">
-              <span>SCAN_NODE: CAM_VQ_ARC_0{selectedImg + 1} // BUFFER: 100% // RESOLUTION: HIGH_RES</span>
-              <span className="text-gold font-bold uppercase tracking-wider">
-                FRAME 0{selectedImg + 1} OF 0{images.length}
-              </span>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Global Lightweight Lightbox Modal (Clean DOM unmount, 0 lingering overlays) */}
+      <LightboxModal
+        isOpen={selectedImg !== null}
+        onClose={() => setSelectedImg(null)}
+        images={images}
+        currentIndex={selectedImg}
+        onPrev={handlePrev}
+        onNext={handleNext}
+        onSelectIndex={(idx) => setSelectedImg(idx)}
+        title={`${currentEvent.id.toUpperCase()}_HQ_DISPLAY`}
+      />
     </section>
   );
 }

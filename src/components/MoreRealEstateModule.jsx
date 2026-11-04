@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Terminal, Eye, X, ChevronLeft, ChevronRight, Maximize2, Activity } from "lucide-react";
+import { motion } from "framer-motion";
+import { Terminal, Eye, Maximize2, Activity } from "lucide-react";
 import { siteConfig } from "@/data/content";
+import LightboxModal from "@/components/common/LightboxModal";
 
 export default function MoreRealEstateModule() {
   const [activeTab, setActiveTab] = useState(0);
@@ -25,33 +26,14 @@ export default function MoreRealEstateModule() {
     return () => clearInterval(timer);
   }, [isHovered, selectedImg, projects.length]);
 
-  // Close lightbox on escape keypress
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === "Escape") {
-        setSelectedImg(null);
-      }
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, []);
-
   const handlePrev = (e) => {
-    e.stopPropagation();
+    if (e && e.stopPropagation) e.stopPropagation();
     setSelectedImg((prev) => (prev - 1 + images.length) % images.length);
   };
 
   const handleNext = (e) => {
-    e.stopPropagation();
+    if (e && e.stopPropagation) e.stopPropagation();
     setSelectedImg((prev) => (prev + 1) % images.length);
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.08 }
-    }
   };
 
   const itemVariants = {
@@ -137,26 +119,27 @@ export default function MoreRealEstateModule() {
     );
   };
 
-  const shortTitles = [
-    "SHOSHIN BÌNH THÀNH",
-    "TỌA ĐÀM CENLAND",
-    "SUN ELITE CITY",
-    "RAMON URBANIZ",
-    "LUMERA CITY",
-    "HIMLAM BOULEVARD",
-    "THANH HÀ NEWCITY",
-    "VINH RESIDENCE",
-    "SUN URBAN CITY"
-  ];
-
   if (!projects || projects.length === 0) return null;
+
+  // Short labels for 9 projects
+  const shortTitles = [
+    "SHOSHIN",
+    "REGAL LEGEND",
+    "SUN ELITE",
+    "CENTRAL RESIDENCE",
+    "LUMERA CITY",
+    "HIMLAM BLVD",
+    "THANH HÀ",
+    "VINH RESIDENCE",
+    "SUN URBAN",
+  ];
 
   return (
     <section id="more-real-estate" className="relative w-full bg-graphite flex flex-col justify-center py-12 md:py-20 px-2 md:px-12 border-b border-charcoal overflow-hidden blueprint-grid-fine">
       {/* Decorative mechanical axis grid */}
       <div className="absolute inset-0 pointer-events-none opacity-15">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-dashed border-gold/10 animate-spin-slow"></div>
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[850px] h-[850px] rounded-full border border-charcoal"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full border border-dashed border-gold/10 animate-spin-slow"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[950px] h-[950px] rounded-full border border-charcoal"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto w-full">
@@ -239,9 +222,9 @@ export default function MoreRealEstateModule() {
           <div className="flex justify-between items-center border-b border-charcoal/60 pb-3 mb-6 font-mono text-[9px] text-platinum/50 px-2 md:px-0">
             <span className="flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse"></span>
-              ACTIVE_STREAM // {currentProject.id.toUpperCase()}_RE_MONITOR
+              ACTIVE_STREAM // {currentProject.id.toUpperCase()}_MONITOR
             </span>
-            <span className="hidden sm:inline">DATA_STREAM: SECURE</span>
+            <span className="hidden sm:inline">DATA_ENCRYPTION: VERIFIED</span>
           </div>
 
           {/* Project Description Panel */}
@@ -286,124 +269,23 @@ export default function MoreRealEstateModule() {
 
           {/* Panel Footer Telemetry */}
           <div className="flex justify-between items-center border-t border-charcoal/60 pt-3 mt-6 font-mono text-[8px] text-platinum/40 px-2 md:px-0">
-            <span>SYS_COORD: VQ_RE_LINK // 100% STABLE</span>
-            <span>CORE_LINK: ONLINE_SYNC</span>
+            <span>SYS_COORD: VQ_RE_ARCHIVE // OPTIMIZED</span>
+            <span>CORE_LINK: SYNCHRONIZED</span>
           </div>
         </div>
       </div>
 
-      {/* Cinematic Full-screen Lightbox Modal */}
-      <AnimatePresence>
-        {selectedImg !== null && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 bg-obsidian/95 backdrop-blur-xl flex flex-col justify-between p-4 md:p-8"
-            onClick={() => setSelectedImg(null)}
-          >
-            {/* Modal Header */}
-            <div className="w-full flex justify-between items-center border-b border-charcoal/80 pb-4 font-mono text-xs z-10">
-              <div className="flex items-center space-x-3 text-gold">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-gold opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-gold"></span>
-                </span>
-                <span className="font-bold uppercase tracking-wider">
-                  CINEMATIC_FEED // {currentProject.id.toUpperCase()}_HQ_DISPLAY
-                </span>
-              </div>
-              <button 
-                type="button"
-                onClick={() => setSelectedImg(null)}
-                className="flex items-center space-x-2 text-platinum/60 hover:text-gold transition-colors cursor-pointer group focus:outline-none"
-              >
-                <span>[ESC_CLOSE]</span>
-                <X size={16} className="group-hover:rotate-90 transition-transform duration-300" />
-              </button>
-            </div>
-
-            {/* Modal Center Image Display (Maximized uncropped sizing) */}
-            <div className="relative flex-grow w-full flex items-center justify-center my-4 z-10">
-              <motion.img 
-                key={`${activeTab}-${selectedImg}`}
-                src={`/${images[selectedImg]}`} 
-                alt={`${currentProject.title} Lightbox ${selectedImg + 1}`}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.6}
-                onDragEnd={(e, info) => {
-                  const swipeThreshold = 50;
-                  if (info.offset.x < -swipeThreshold) {
-                    handleNext(e);
-                  } else if (info.offset.x > swipeThreshold) {
-                    handlePrev(e);
-                  }
-                }}
-                className="max-h-[75vh] max-w-full md:max-w-6xl object-contain border border-charcoal/60 rounded-sm shadow-2xl z-10 cursor-grab active:cursor-grabbing"
-                onClick={(e) => e.stopPropagation()}
-              />
-
-              {/* Navigation overlays */}
-              {images.length > 1 && (
-                <>
-                  <button
-                    type="button"
-                    onClick={handlePrev}
-                    className="absolute left-2 md:left-6 z-20 p-3 bg-obsidian/85 border border-gold/40 text-gold hover:text-warmwhite hover:bg-gold/25 transition-all rounded-full cursor-pointer focus:outline-none shadow-[0_0_20px_rgba(0,0,0,0.8)]"
-                    aria-label="Previous Image"
-                  >
-                    <ChevronLeft size={24} />
-                  </button>
-                  <button
-                    type="button"
-                    onClick={handleNext}
-                    className="absolute right-2 md:right-6 z-20 p-3 bg-obsidian/85 border border-gold/40 text-gold hover:text-warmwhite hover:bg-gold/25 transition-all rounded-full cursor-pointer focus:outline-none shadow-[0_0_20px_rgba(0,0,0,0.8)]"
-                    aria-label="Next Image"
-                  >
-                    <ChevronRight size={24} />
-                  </button>
-                </>
-              )}
-            </div>
-
-            {/* Thumbnail Strip for fast clicking / sliding through images */}
-            {images.length > 1 && (
-              <div 
-                className="w-full flex items-center justify-center gap-2 overflow-x-auto py-2 px-4 z-20"
-                onClick={(e) => e.stopPropagation()}
-              >
-                {images.map((img, thumbIdx) => (
-                  <button
-                    type="button"
-                    key={thumbIdx}
-                    onClick={() => setSelectedImg(thumbIdx)}
-                    className={`relative shrink-0 w-12 h-12 md:w-16 md:h-16 rounded overflow-hidden border transition-all cursor-pointer ${
-                      selectedImg === thumbIdx
-                        ? "border-gold shadow-[0_0_10px_#D5B67A] scale-105"
-                        : "border-white/10 opacity-50 hover:opacity-90"
-                    }`}
-                  >
-                    <img 
-                      src={`/${img}`} 
-                      alt={`Thumb ${thumbIdx + 1}`}
-                      className="w-full h-full object-cover"
-                    />
-                  </button>
-                ))}
-              </div>
-            )}
-
-            {/* Modal Footer */}
-            <div className="w-full border-t border-charcoal/80 pt-4 font-mono text-[9px] text-platinum/40 flex justify-between items-center z-10">
-              <span>SCAN_NODE: CAM_VQ_RE_ARC_0{selectedImg + 1} // BUFFER: 100% // RESOLUTION: HIGH_RES</span>
-              <span className="text-gold font-bold uppercase tracking-wider">
-                FRAME 0{selectedImg + 1} OF 0{images.length}
-              </span>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Global Lightweight Lightbox Modal (Clean DOM unmount, 0 lingering overlays) */}
+      <LightboxModal
+        isOpen={selectedImg !== null}
+        onClose={() => setSelectedImg(null)}
+        images={images}
+        currentIndex={selectedImg}
+        onPrev={handlePrev}
+        onNext={handleNext}
+        onSelectIndex={(idx) => setSelectedImg(idx)}
+        title={`${currentProject.id.toUpperCase()}_HQ_DISPLAY`}
+      />
     </section>
   );
 }

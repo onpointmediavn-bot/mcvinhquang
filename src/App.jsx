@@ -11,7 +11,6 @@ import MasteriseModule from "@/components/MasteriseModule";
 import MoreRealEstateModule from "@/components/MoreRealEstateModule";
 import MediaEngine from "@/components/MediaEngine";
 import CommentaryEngine from "@/components/CommentaryEngine";
-import ImpactArchive from "@/components/ImpactArchive";
 import ActivationTerminal from "@/components/ActivationTerminal";
 
 export default function App() {
