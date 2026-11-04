@@ -232,12 +232,9 @@ export default function MoreRealEstateModule() {
             <span className="text-[10px] font-mono text-gold uppercase tracking-[0.2em] block mb-1">
               {currentProject.subtitle}
             </span>
-            <h3 className="text-xl md:text-2xl font-black text-platinum tracking-tight uppercase leading-none mb-3">
+            <h3 className="text-xl md:text-2xl font-black text-platinum tracking-tight uppercase leading-none">
               {currentProject.title}
             </h3>
-            <p className="text-platinum/80 text-xs md:text-sm leading-relaxed max-w-4xl font-semibold">
-              {currentProject.description}
-            </p>
           </div>
 
           {/* Asymmetric Grid Collage */}

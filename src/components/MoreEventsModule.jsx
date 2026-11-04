@@ -221,12 +221,9 @@ export default function MoreEventsModule() {
             <span className="text-[10px] font-mono text-gold uppercase tracking-[0.2em] block mb-1">
               {currentEvent.subtitle}
             </span>
-            <h3 className="text-xl md:text-2xl font-black text-platinum tracking-tight uppercase leading-none mb-3">
+            <h3 className="text-xl md:text-2xl font-black text-platinum tracking-tight uppercase leading-none">
               {currentEvent.title}
             </h3>
-            <p className="text-platinum/80 text-xs md:text-sm leading-relaxed max-w-4xl font-semibold">
-              {currentEvent.description}
-            </p>
           </div>
 
           {/* Asymmetric Grid Collage */}

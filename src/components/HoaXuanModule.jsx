@@ -137,16 +137,6 @@ export default function HoaXuanModule() {
             <span className="hidden sm:inline">DATA_ENCRYPTION: 256_BIT_SSL</span>
           </div>
 
-          {/* Module Description Panel */}
-          <div className="mb-8 px-2 md:px-0">
-            <h3 className="text-xl md:text-2xl font-black text-platinum tracking-tight uppercase leading-none mb-3">
-              {siteConfig.hoaXuanModule.title}
-            </h3>
-            <p className="text-platinum/80 text-xs md:text-sm leading-relaxed max-w-4xl font-semibold">
-              {siteConfig.hoaXuanModule.description}
-            </p>
-          </div>
-
           {/* Asymmetric Grid Collage */}
           <motion.div 
             variants={containerVariants}
