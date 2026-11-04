@@ -151,77 +151,43 @@ export const siteConfig = {
     videos: [
       {
         id: 1,
-        title: "REVIEW SẢN PHẨM",
-        category: "TECH & RETAIL",
-        duration: "03:12",
-        format: "horizontal",
-        aspectRatio: "16:9",
-        image: "https://img.youtube.com/vi/SUj-GF4Kdw0/hqdefault.jpg",
-        videoUrl: "https://www.youtube.com/embed/SUj-GF4Kdw0",
-        description: "Dẫn dắt đánh giá trải nghiệm thực tế sản phẩm công nghệ thế hệ mới. Phong cách năng động, tự nhiên và tập trung vào tính năng cốt lõi."
-      },
-      {
-        id: 2,
-        title: "TRẢI NGHIỆM THỰC TẾ",
-        category: "LIFESTYLE & TRAVEL",
-        duration: "04:45",
-        format: "horizontal",
-        aspectRatio: "16:9",
-        image: "https://img.youtube.com/vi/l6TTXu3KvyI/hqdefault.jpg",
-        videoUrl: "https://www.youtube.com/embed/l6TTXu3KvyI",
-        description: "Khám phá và truyền tải trọn vẹn không khí trải nghiệm thực tế tại hiện trường. Khả năng xử lý ứng biến linh hoạt trước ống kính."
-      },
-      {
-        id: 3,
-        title: "VJ SHORTS TRUYỀN THÔNG",
-        category: "MOBILE SHORTS",
-        duration: "00:59",
-        format: "vertical",
-        aspectRatio: "9:16",
-        image: "https://img.youtube.com/vi/ePhvMNiioEA/hqdefault.jpg",
-        videoUrl: "https://www.youtube.com/embed/ePhvMNiioEA",
-        description: "Định dạng dọc tối ưu cho nền tảng di động (TikTok/Reels/Shorts). Nhịp điệu dẫn nhanh, ngắn gọn, thu hút người xem trong 3 giây đầu."
-      }
-    ]
-  },
-
-  commentary: {
-    title: "CHÍNH LUẬN",
-    subtitle: "Sự chính xác, sắc sảo và uy tín.",
-    portrait: "images/optimized/commentary-portrait.webp",
-    videoUrl: "https://drive.google.com/file/d/1ltd2qnDW65F9yFDZF3wWLbztuwaq9P39/preview",
-    articles: [
-      {
-        quote: "Giọng nói chính luận đòi hỏi sự đĩnh đạc, bản lĩnh và khả năng làm chủ thông tin tuyệt đối.",
-        source: "ĐÀI PT-TH HÀ NỘI",
-        year: "2025"
-      },
-      {
-        quote: "Phong thái dẫn chương trình chính luận tạo dựng chiều sâu và lòng tin cho từng bản tin phát sóng.",
-        source: "ĐÀI PT-TH HÀ NỘI",
-        year: "2025"
-      }
-    ]
-  },
-
-  videoArchive: {
-    title: "VIDEO ARCHIVE",
-    subtitle: "Kho tư liệu ghi hình thực tế các sự kiện.",
-    videosList: [
-      {
-        id: 1,
         title: "BẢN TIN MC TRUYỀN HÌNH",
-        image: "images/optimized/commentary-portrait.webp",
+        duration: "03:15",
+        aspectRatio: "16:9",
         videoUrl: "https://drive.google.com/file/d/1ltd2qnDW65F9yFDZF3wWLbztuwaq9P39/preview"
       },
       {
         id: 2,
+        title: "REVIEW SẢN PHẨM",
+        duration: "03:12",
+        aspectRatio: "16:9",
+        videoUrl: "https://www.youtube.com/embed/SUj-GF4Kdw0"
+      },
+      {
+        id: 3,
+        title: "TRẢI NGHIỆM THỰC TẾ",
+        duration: "04:45",
+        aspectRatio: "16:9",
+        videoUrl: "https://www.youtube.com/embed/l6TTXu3KvyI"
+      },
+      {
+        id: 4,
         title: "SỰ KIỆN KICK-OFF & VINH DANH",
-        image: "https://img.youtube.com/vi/1JCzBQQC-fQ/hqdefault.jpg",
+        duration: "02:50",
+        aspectRatio: "16:9",
         videoUrl: "https://www.youtube.com/embed/1JCzBQQC-fQ"
+      },
+      {
+        id: 5,
+        title: "VJ SHORTS TRUYỀN THÔNG",
+        duration: "00:59",
+        aspectRatio: "9:16",
+        videoUrl: "https://www.youtube.com/embed/ePhvMNiioEA"
       }
     ]
   },
+
+
 
   moreEvents: [
     {

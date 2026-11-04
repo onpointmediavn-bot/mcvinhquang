@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Tv, Cpu, Wifi, Shield, Disc, Volume2 } from "lucide-react";
 import { siteConfig } from "@/data/content";
 
@@ -83,11 +82,6 @@ export default function MediaEngine() {
                   </span>
                 </div>
 
-                {/* Subtitle / System info */}
-                <p className="text-[11px] text-platinum/50 font-mono leading-relaxed">
-                  Chọn kênh truyền thông để tải nguồn dữ liệu âm thanh và hình ảnh của VJ/MC Vinh Quang.
-                </p>
-
                 {/* Feed Selector Buttons */}
                 <div className="space-y-3 pt-2">
                   {videos.map((video, index) => {
@@ -96,8 +90,9 @@ export default function MediaEngine() {
                     return (
                       <button
                         key={video.id}
+                        type="button"
                         onClick={() => setActiveVideo(video)}
-                        className={`w-full flex items-center justify-between p-3.5 border transition-all duration-300 text-left rounded-sm relative group overflow-hidden ${
+                        className={`w-full flex items-center justify-between p-3.5 border transition-all duration-300 text-left rounded-sm relative group overflow-hidden cursor-pointer ${
                           isActive 
                             ? "bg-gold/15 border-gold shadow-[0_0_15px_rgba(213,182,122,0.15)]" 
                             : "bg-obsidian/60 border-charcoal hover:border-gold/40 hover:bg-gold/[0.02]"
@@ -118,9 +113,6 @@ export default function MediaEngine() {
 
                           {/* Info */}
                           <div className="flex-grow min-w-0">
-                            <span className={`block font-mono text-[8px] uppercase tracking-widest leading-none mb-1 transition-colors ${isActive ? "text-gold" : "text-platinum/40"}`}>
-                              {video.category}
-                            </span>
                             <span className="block font-bold text-xs text-platinum tracking-tight group-hover:text-gold transition-colors truncate">
                               {video.title}
                             </span>
@@ -132,7 +124,9 @@ export default function MediaEngine() {
                           <span className={`font-semibold ${isActive ? "text-gold" : "text-platinum/30"}`}>
                             {isActive ? "ACTIVE" : "STANDBY"}
                           </span>
-                          <span className="text-platinum/50 text-[8px] mt-1">{video.duration}</span>
+                          {video.duration && (
+                            <span className="text-platinum/50 text-[8px] mt-1">{video.duration}</span>
+                          )}
                         </div>
                       </button>
                     );
@@ -152,7 +146,7 @@ export default function MediaEngine() {
                 </div>
                 <div className="flex justify-between items-center text-platinum/40">
                   <span className="flex items-center gap-1.5"><Disc size={10} /> FEED_SOURCE</span>
-                  <span className="text-platinum max-w-[150px] truncate text-right uppercase">STREAM_SRC:YT</span>
+                  <span className="text-platinum max-w-[150px] truncate text-right uppercase">STREAM_SRC:SECURE</span>
                 </div>
               </div>
 
@@ -171,10 +165,10 @@ export default function MediaEngine() {
 
               {/* Console Screen Top status bar */}
               <div className="flex justify-between items-center border-b border-charcoal/80 pb-3 mb-4 font-mono text-[10px] sm:text-xs relative z-10">
-                <span className="text-gold font-bold uppercase flex items-center gap-2">
-                  <Tv size={14} className="text-gold" /> CONSOLE_SCREEN // {activeVideo.category}
+                <span className="text-gold font-bold uppercase flex items-center gap-2 truncate max-w-[70%]">
+                  <Tv size={14} className="text-gold shrink-0" /> CONSOLE_SCREEN // {activeVideo.title}
                 </span>
-                <span className="text-platinum/50 flex items-center gap-2">
+                <span className="text-platinum/50 flex items-center gap-2 shrink-0">
                   <span className="inline-block w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
                   <span className="text-red-500 font-bold tracking-wider">● FEED_STREAMING</span>
                 </span>
@@ -258,17 +252,6 @@ export default function MediaEngine() {
                   </div>
                 </div>
 
-              </div>
-
-              {/* Active Item Description Footer Card */}
-              <div className="mt-4 p-3 bg-obsidian/60 border border-charcoal/50 rounded-sm font-mono text-[10px] relative z-10">
-                <div className="flex justify-between items-center mb-1 text-gold">
-                  <span className="font-bold">VQ_SIG_0{activeVideo.id}: {activeVideo.title}</span>
-                  <span className="text-platinum/40 text-[8px] uppercase tracking-widest">{activeVideo.category} // RATIO: {activeVideo.aspectRatio}</span>
-                </div>
-                <p className="text-platinum/70 leading-relaxed font-sans text-xs">
-                  {activeVideo.description}
-                </p>
               </div>
 
             </div>

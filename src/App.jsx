@@ -10,7 +10,6 @@ import HoaXuanModule from "@/components/HoaXuanModule";
 import MasteriseModule from "@/components/MasteriseModule";
 import MoreRealEstateModule from "@/components/MoreRealEstateModule";
 import MediaEngine from "@/components/MediaEngine";
-import CommentaryEngine from "@/components/CommentaryEngine";
 import ActivationTerminal from "@/components/ActivationTerminal";
 
 export default function App() {
@@ -52,10 +51,7 @@ export default function App() {
       {/* 9. MEDIA TRANSMISSION ENGINE */}
       <MediaEngine />
 
-      {/* 10. COMMENTARY ENGINE */}
-      <CommentaryEngine />
-
-      {/* 11. ACTIVATION TERMINAL */}
+      {/* 10. ACTIVATION TERMINAL */}
       <ActivationTerminal />
     </div>
   );
