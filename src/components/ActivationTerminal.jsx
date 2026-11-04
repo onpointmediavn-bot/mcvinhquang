@@ -54,7 +54,7 @@ export default function ActivationTerminal() {
             TERMINAL 11 // MAXIMUM_ACTIVATION
           </span>
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-platinum tracking-tight uppercase leading-tight mb-3">
-            LET'S CREATE THE NEXT IMPACT
+            LIÊN HỆ ĐẶT LỊCH
           </h2>
           <p className="text-xs font-mono text-gold/70 uppercase tracking-[0.2em] mt-1">
             SYSTEM ONLINE // CONNECT THROUGH THE PORTS BELOW
