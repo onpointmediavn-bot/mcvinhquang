@@ -9,6 +9,8 @@ import SymphonyModule from "@/components/SymphonyModule";
 import HoaXuanModule from "@/components/HoaXuanModule";
 import MasteriseModule from "@/components/MasteriseModule";
 import MoreRealEstateModule from "@/components/MoreRealEstateModule";
+import ThuyetTrinhModule from "@/components/ThuyetTrinhModule";
+import ChinhLuanModule from "@/components/ChinhLuanModule";
 import MediaEngine from "@/components/MediaEngine";
 import ActivationTerminal from "@/components/ActivationTerminal";
 
@@ -48,10 +50,16 @@ export default function App() {
       {/* 8.5. ARCHIVED REAL ESTATE TRANSMISSIONS (MORE PROJECTS) */}
       <MoreRealEstateModule />
 
-      {/* 9. MEDIA TRANSMISSION ENGINE */}
+      {/* 9. THUYẾT TRÌNH BĐS MODULE */}
+      <ThuyetTrinhModule />
+
+      {/* 10. CHÍNH LUẬN MODULE */}
+      <ChinhLuanModule />
+
+      {/* 11. MEDIA TRANSMISSION ENGINE */}
       <MediaEngine />
 
-      {/* 10. ACTIVATION TERMINAL */}
+      {/* 12. ACTIVATION TERMINAL */}
       <ActivationTerminal />
     </div>
   );

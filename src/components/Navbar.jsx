@@ -19,6 +19,8 @@ export default function Navbar() {
   const navItems = [
     { label: "MC EVENT", target: "custom-module" },
     { label: "MC BẤT ĐỘNG SẢN", target: "real-estate-engine" },
+    { label: "THUYẾT TRÌNH BĐS", target: "thuyet-trinh-module" },
+    { label: "CHÍNH LUẬN", target: "chinh-luan-module" },
     { label: "DANH SÁCH VIDEO", target: "media-engine" }
   ];
 

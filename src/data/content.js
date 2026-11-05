@@ -16,18 +16,18 @@ export const siteConfig = {
   about: {
     title: "THÔNG TIN CHUNG",
     subtitle: "TẬN TÂM - CHUYÊN NGHIỆP - BÙNG NỔ",
-    shareTitle: "CHIA SẺ VỀ TÔI",
+    shareTitle: "ĐỐI TÁC TIÊU BIỂU",
     portrait: "images/optimized/about-portrait.webp",
     shareParagraphs: [
-      "Khởi đầu đam mê với ánh đèn sân khấu từ năm 2012.",
-      "Hành trình 9+ năm dẫn chương trình chuyên nghiệp đầy cảm xúc.",
-      "Sự hài lòng của Khách hàng là thước đo năng lực hàng đầu."
+      "Đồng hành dẫn dắt và bùng nổ năng lượng tại hơn 1000+ sân khấu sự kiện, gala dinner và lễ hội toàn quốc.",
+      "Đối tác tin cậy của hơn 500+ khách hàng, doanh nghiệp và tập đoàn kinh tế hàng đầu.",
+      "Hợp tác thành công cùng các đơn vị lớn: Sun Group, Techcombank, MIK Group, Masterise Homes, Cenland, Sixdo, Queen Land..."
     ],
     stats: [
+      { label: "SÂN KHẤU", value: "1000+" },
+      { label: "KHÁCH HÀNG", value: "500+" },
       { label: "KINH NGHIỆM", value: "9+ NĂM" },
-      { label: "ĐÀI TRUYỀN HÌNH", value: "HÀ NỘI TV" },
-      { label: "THÊ MẠNH", value: "BẤT ĐỘNG SẢN" },
-      { label: "ĐAM MÊ", value: "TỪ NĂM 2012" }
+      { label: "ĐÀI TRUYỀN HÌNH", value: "HÀ NỘI TV" }
     ]
   },
 
@@ -432,6 +432,28 @@ export const siteConfig = {
       ]
     }
   ],
+
+  thuyetTrinhModule: {
+    title: "DIỄN GIẢ & THUYẾT TRÌNH BĐS",
+    subtitle: "ĐÀO TẠO & PHÂN TÍCH CHUYÊN SÂU DỰ ÁN CAO CẤP",
+    images: [
+      "images/placeholders/thuyet-trinh-1.webp",
+      "images/placeholders/thuyet-trinh-2.webp",
+      "images/placeholders/thuyet-trinh-3.webp",
+      "images/placeholders/thuyet-trinh-4.webp"
+    ]
+  },
+
+  chinhLuanModule: {
+    title: "MC TRUYỀN HÌNH & CHÍNH LUẬN",
+    subtitle: "BẢN LĨNH CHÍNH LUẬN - UY TÍN - ĐĨNH ĐẠC",
+    images: [
+      "images/placeholders/chinh-luan-1.webp",
+      "images/placeholders/chinh-luan-2.webp",
+      "images/placeholders/chinh-luan-3.webp",
+      "images/placeholders/chinh-luan-4.webp"
+    ]
+  },
 
   contact: {
     title: "LIÊN HỆ HỢP TÁC\nMC VINH QUANG",

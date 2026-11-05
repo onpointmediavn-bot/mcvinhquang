@@ -10,10 +10,10 @@ export default function PowerCore() {
 
   // Map icons to the stats
   const icons = [
-    Trophy, // experience
-    Shield, // TV station
-    Zap,    // Real estate specialty
-    Star    // Passion
+    Trophy, // Sân khấu
+    Star,   // Khách hàng
+    Zap,    // Kinh nghiệm
+    Shield  // Đài truyền hình
   ];
 
   return (
