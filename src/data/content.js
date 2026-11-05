@@ -172,33 +172,37 @@ export const siteConfig = {
       },
       {
         id: 4,
-        title: "THUYẾT TRÌNH THÁI ĐÀO RESIDENCE",
-        duration: "03:12",
-        aspectRatio: "16:9",
-        videoUrl: "https://www.youtube.com/embed/SUj-GF4Kdw0"
-      },
-      {
-        id: 5,
         title: "GAMESHOW - MINIGAME GALA DINNER",
         duration: "02:40",
         aspectRatio: "16:9",
         videoUrl: "https://www.youtube.com/embed/-7Ppen2ZUfw"
       },
       {
-        id: 6,
+        id: 5,
         title: "THỜI SỰ 23H - ĐÀI HÀ NỘI",
         duration: "02:15",
         aspectRatio: "16:9",
         videoUrl: "https://www.youtube.com/embed/aIaFmQcUboU"
       },
       {
-        id: 7,
+        id: 6,
         title: "REVIEW XANH ISLAND",
         duration: "04:45",
         aspectRatio: "16:9",
         videoUrl: "https://www.youtube.com/embed/l6TTXu3KvyI"
       }
     ]
+  },
+
+  vjReviewModule: {
+    title: "VJ / REVIEW",
+    subtitle: "KẾT NỐI NHÃN HÀNG VÀ KHÁCH HÀNG QUA GÓC NHÌN TRUYỀN THÔNG ĐẲNG CẤP",
+    category: "REVIEW DỰ ÁN BẤT ĐỘNG SẢN",
+    videoTitle: "THÁI ĐÀO RESIDENCE",
+    duration: "03:12",
+    thumbnail: "https://img.youtube.com/vi/SUj-GF4Kdw0/hqdefault.jpg",
+    videoUrl: "https://www.youtube.com/embed/SUj-GF4Kdw0",
+    description: "Dẫn dắt và trực tiếp trải nghiệm thực tế dự án Thái Đào Residence. Truyền tải trọn vẹn không khí, phân tích hạ tầng quy hoạch và tiềm năng đầu tư bằng phong cách VJ hiện đại, sinh động và giàu sức thuyết phục."
   },
 
 

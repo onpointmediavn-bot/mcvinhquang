@@ -12,6 +12,7 @@ import MoreRealEstateModule from "@/components/MoreRealEstateModule";
 import ThuyetTrinhModule from "@/components/ThuyetTrinhModule";
 import ChinhLuanModule from "@/components/ChinhLuanModule";
 import MediaEngine from "@/components/MediaEngine";
+import VjReviewModule from "@/components/VjReviewModule";
 import ActivationTerminal from "@/components/ActivationTerminal";
 
 export default function App() {
@@ -59,7 +60,10 @@ export default function App() {
       {/* 11. MEDIA TRANSMISSION ENGINE */}
       <MediaEngine />
 
-      {/* 12. ACTIVATION TERMINAL */}
+      {/* 12. VJ / REVIEW MODULE */}
+      <VjReviewModule />
+
+      {/* 13. ACTIVATION TERMINAL */}
       <ActivationTerminal />
     </div>
   );
