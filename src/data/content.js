@@ -425,12 +425,7 @@ export const siteConfig = {
     title: "MC TRUYỀN HÌNH & CHÍNH LUẬN",
     subtitle: "BẢN LĨNH CHÍNH LUẬN - UY TÍN - ĐĨNH ĐẠC",
     images: [
-      "images/chinh-luan/chinh-luan-1.webp",
-      "images/chinh-luan/chinh-luan-2.webp",
-      "images/chinh-luan/chinh-luan-3.webp",
-      "images/chinh-luan/chinh-luan-4.webp",
-      "images/chinh-luan/chinh-luan-5.webp",
-      "images/chinh-luan/chinh-luan-6.webp"
+      "images/chinh-luan/chinh-luan-main.webp"
     ]
   },
 

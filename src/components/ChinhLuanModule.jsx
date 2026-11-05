@@ -83,53 +83,55 @@ export default function ChinhLuanModule() {
             <span className="hidden sm:inline">DATA_ENCRYPTION: 256_BIT_SSL</span>
           </div>
 
-          {/* Grid Layout */}
-          <motion.div 
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 w-full"
-          >
+          {/* Single Cinema Display */}
+          <div className="w-full flex justify-center">
             {images.map((img, idx) => (
               <motion.div
                 key={idx}
                 variants={itemVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
                 onClick={() => setSelectedImg(idx)}
-                className="relative overflow-hidden border border-charcoal bg-obsidian rounded-sm cursor-pointer group gold-glow-hover flex flex-col justify-between aspect-[4/3] md:aspect-[3/4]"
+                className="relative overflow-hidden border border-charcoal bg-obsidian rounded-sm cursor-pointer group gold-glow-hover flex flex-col justify-between w-full max-w-4xl aspect-[4/3] md:aspect-[16/10]"
               >
-                <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
-                <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
-                <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
-                <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+                <div className="absolute top-0 left-0 w-3 h-3 md:w-5 md:h-5 border-t-2 border-l-2 border-gold/40 group-hover:border-gold transition-colors duration-500 z-10"></div>
+                <div className="absolute top-0 right-0 w-3 h-3 md:w-5 md:h-5 border-t-2 border-r-2 border-gold/40 group-hover:border-gold transition-colors duration-500 z-10"></div>
+                <div className="absolute bottom-0 left-0 w-3 h-3 md:w-5 md:h-5 border-b-2 border-l-2 border-gold/40 group-hover:border-gold transition-colors duration-500 z-10"></div>
+                <div className="absolute bottom-0 right-0 w-3 h-3 md:w-5 md:h-5 border-b-2 border-r-2 border-gold/40 group-hover:border-gold transition-colors duration-500 z-10"></div>
 
-                <div className="hidden md:flex p-3 border-b border-charcoal/80 bg-obsidian/60 justify-between items-center font-mono text-[8px] z-10 opacity-50 group-hover:opacity-100 transition-opacity">
-                  <span className="text-gold font-bold flex items-center gap-1 uppercase">
-                    <Terminal size={8} /> CL_FEED_0{idx + 1}
+                <div className="flex p-3 md:p-4 border-b border-charcoal/80 bg-obsidian/70 justify-between items-center font-mono text-[9px] md:text-xs z-10">
+                  <span className="text-gold font-bold flex items-center gap-1.5 uppercase">
+                    <Terminal size={12} /> HANOI_TV // CHÍNH LUẬN TRUYỀN HÌNH
                   </span>
-                  <span className="text-platinum/40 uppercase tracking-wider">HANOI_TV</span>
+                  <span className="text-platinum/60 uppercase tracking-wider flex items-center gap-2">
+                    <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    BROADCAST_STUDIO_LIVE
+                  </span>
                 </div>
 
-                <div className="absolute inset-0 z-0">
+                <div className="absolute inset-0 z-0 top-[41px] md:top-[49px]">
                   <img 
                     src={`/${img}`} 
-                    alt={`Chính luận ${idx + 1}`}
+                    alt="MC Chính luận Hà Nội TV"
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
+                    className="w-full h-full object-cover object-center opacity-90 group-hover:opacity-100 group-hover:scale-[1.02] transition-all duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian/30 opacity-80 group-hover:opacity-50 transition-opacity"></div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian/80 via-transparent to-obsidian/20 opacity-70 group-hover:opacity-40 transition-opacity pointer-events-none"></div>
                 </div>
 
-                <div className="relative z-10 p-3 flex justify-between items-center bg-gradient-to-t from-obsidian/90 to-transparent pt-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <span className="font-mono text-[9px] text-platinum/50 flex items-center gap-1">
-                    <Eye size={10} className="text-gold animate-pulse" /> CLICK_TO_EXPAND
+                <div className="relative z-10 p-3 md:p-4 flex justify-between items-center bg-gradient-to-t from-obsidian/95 via-obsidian/60 to-transparent pt-10">
+                  <span className="font-mono text-[9px] md:text-xs text-platinum/70 flex items-center gap-1.5">
+                    <Eye size={12} className="text-gold animate-pulse" /> NHẤP ĐỂ PHÓNG TO XEM CHI TIẾT
                   </span>
-                  <Maximize2 size={10} className="text-gold" />
+                  <div className="flex items-center gap-1 text-gold font-mono text-[9px] md:text-xs border border-gold/30 px-2 py-1 bg-obsidian/60">
+                    <Maximize2 size={12} /> FULLSCREEN
+                  </div>
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
 
