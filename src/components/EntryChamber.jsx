@@ -30,7 +30,7 @@ export default function EntryChamber() {
   };
 
   return (
-    <section className="relative md:h-screen min-h-[400px] w-full overflow-hidden bg-obsidian flex flex-col justify-between pt-4 pb-4 px-2 md:p-12 border-b border-charcoal blueprint-grid">
+    <section className="relative md:h-screen min-h-[500px] w-full overflow-hidden bg-obsidian flex flex-col justify-between pt-16 md:pt-4 pb-4 px-3 md:p-12 border-b border-charcoal blueprint-grid">
 
       {/* Background Kinetic Systems */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30 select-none">
@@ -69,21 +69,21 @@ export default function EntryChamber() {
       </div>
 
       {/* Centerpiece Split Engine */}
-      <div className="relative z-10 my-4 md:my-auto w-full max-w-7xl mx-auto flex flex-row gap-3 md:gap-12 items-center">
-        {/* Left Column: Hero HUD Portrait */}
+      <div className="relative z-10 my-4 md:my-auto w-full max-w-7xl mx-auto flex flex-col md:flex-row gap-6 md:gap-12 items-center">
+        {/* Left Column (Desktop) / Bottom (Mobile): Hero HUD Portrait */}
         {siteConfig.hero.backgroundImage && (
           <motion.div
             variants={itemVariants}
             initial="hidden"
             animate="visible"
-            className="flex-[4] lg:flex-1 w-0 flex justify-center"
+            className="order-2 md:order-1 w-full md:flex-[4] lg:flex-1 md:w-0 flex justify-center max-w-[280px] sm:max-w-xs md:max-w-md"
           >
-            <div className="relative w-full max-w-md aspect-[3/4] p-1 md:p-3 bg-charcoal/20 border border-charcoal/80 rounded-sm gold-glow flex items-center justify-center overflow-hidden group gold-glow-hover">
+            <div className="relative w-full aspect-[3/4] p-1.5 md:p-3 bg-charcoal/20 border border-charcoal/80 rounded-sm gold-glow flex items-center justify-center overflow-hidden group gold-glow-hover">
               {/* HUD Bracket Corners */}
-              <div className="absolute top-0 left-0 w-2 h-2 md:w-4 md:h-4 border-t border-l md:border-t-2 md:border-l-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
-              <div className="absolute top-0 right-0 w-2 h-2 md:w-4 md:h-4 border-t border-r md:border-t-2 md:border-r-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
-              <div className="absolute bottom-0 left-0 w-2 h-2 md:w-4 md:h-4 border-b border-l md:border-b-2 md:border-l-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
-              <div className="absolute bottom-0 right-0 w-2 h-2 md:w-4 md:h-4 border-b border-r md:border-b-2 md:border-r-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
+              <div className="absolute top-0 left-0 w-2.5 h-2.5 md:w-4 md:h-4 border-t-2 border-l-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
+              <div className="absolute top-0 right-0 w-2.5 h-2.5 md:w-4 md:h-4 border-t-2 border-r-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
+              <div className="absolute bottom-0 left-0 w-2.5 h-2.5 md:w-4 md:h-4 border-b-2 border-l-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
+              <div className="absolute bottom-0 right-0 w-2.5 h-2.5 md:w-4 md:h-4 border-b-2 border-r-2 border-gold/40 group-hover:border-gold transition-colors duration-500"></div>
 
               {/* Inner Frame */}
               <div className="relative w-full h-full overflow-hidden border border-charcoal/40 bg-obsidian">
@@ -106,7 +106,7 @@ export default function EntryChamber() {
                 <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/10 to-transparent"></div>
                 
                 {/* HUD Status Bar */}
-                <div className="hidden md:flex absolute bottom-3 left-3 right-3 font-mono text-[9px] text-platinum/60 justify-between bg-obsidian/90 backdrop-blur-sm p-2 border border-charcoal/60">
+                <div className="flex absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-3 font-mono text-[8px] md:text-[9px] text-platinum/60 justify-between bg-obsidian/90 backdrop-blur-sm p-1.5 md:p-2 border border-charcoal/60">
                   <span className="flex items-center gap-1">
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                     LIVE_FEED: ONLINE
@@ -118,29 +118,29 @@ export default function EntryChamber() {
           </motion.div>
         )}
 
-        {/* Right Column: Typographic Details */}
+        {/* Right Column (Desktop) / Top (Mobile): Typographic Details */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="flex-[8] lg:flex-1 w-0 flex flex-col items-start text-left"
+          className="order-1 md:order-2 w-full md:flex-[8] lg:flex-1 md:w-0 flex flex-col items-center md:items-start text-center md:text-left"
         >
           <motion.div variants={itemVariants} className="mb-2 md:mb-4">
-            <span className="font-mono text-[8px] md:text-xs text-gold tracking-[0.2em] md:tracking-[0.3em] uppercase">
+            <span className="font-mono text-[9px] sm:text-xs md:text-xs text-gold tracking-[0.2em] md:tracking-[0.3em] uppercase">
               {siteConfig.hero.slogan}
             </span>
           </motion.div>
 
           <motion.h1
             variants={itemVariants}
-            className="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-platinum tracking-tight leading-tight md:leading-none mb-2 md:mb-6 animate-sweep md:whitespace-nowrap"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-platinum tracking-tight leading-tight md:leading-none mb-2 md:mb-6 animate-sweep md:whitespace-nowrap"
           >
             {siteConfig.hero.title}
           </motion.h1>
 
           <motion.p
             variants={itemVariants}
-            className="text-xs sm:text-lg md:text-2xl text-gold/90 font-medium tracking-[0.05em] md:tracking-[0.15em] mb-4 md:mb-10"
+            className="text-sm sm:text-lg md:text-2xl text-gold/90 font-medium tracking-[0.05em] md:tracking-[0.15em] mb-4 md:mb-10"
           >
             {siteConfig.hero.subtitle}
           </motion.p>
@@ -148,18 +148,18 @@ export default function EntryChamber() {
           {/* Roles Machine Loop */}
           <motion.div
             variants={itemVariants}
-            className="grid grid-cols-2 gap-2 md:flex md:flex-row md:space-x-4 lg:space-x-6 text-left"
+            className="grid grid-cols-2 gap-2 w-full max-w-sm md:max-w-none md:flex md:flex-row md:space-x-4 lg:space-x-6 text-left"
           >
             {siteConfig.hero.roles.map((role, index) => (
               <div
                 key={index}
-                className="px-2 py-1 md:px-4 md:py-2 border border-charcoal bg-graphite/40 backdrop-blur-md flex items-center space-x-1.5 md:space-x-2 text-platinum hover:border-gold/30 transition-all duration-300 group"
+                className="px-2.5 py-1.5 md:px-4 md:py-2 border border-charcoal bg-graphite/40 backdrop-blur-md flex items-center justify-center md:justify-start space-x-1.5 md:space-x-2 text-platinum hover:border-gold/30 transition-all duration-300 group"
               >
-                {index === 0 && <Cpu size={10} className="text-gold group-hover:rotate-45 transition-transform duration-500 w-2.5 h-2.5 md:w-3.5 md:h-3.5" />}
-                {index === 1 && <Zap size={10} className="text-gold w-2.5 h-2.5 md:w-3.5 md:h-3.5" />}
-                {index === 2 && <Activity size={10} className="text-gold w-2.5 h-2.5 md:w-3.5 md:h-3.5" />}
-                {index === 3 && <Settings size={10} className="text-gold animate-spin w-2.5 h-2.5 md:w-3.5 md:h-3.5" style={{ animationDuration: '6s' }} />}
-                <span className="font-mono text-[8px] md:text-xs tracking-wider font-semibold">{role}</span>
+                {index === 0 && <Cpu size={10} className="text-gold group-hover:rotate-45 transition-transform duration-500 w-3 h-3 md:w-3.5 md:h-3.5" />}
+                {index === 1 && <Zap size={10} className="text-gold w-3 h-3 md:w-3.5 md:h-3.5" />}
+                {index === 2 && <Activity size={10} className="text-gold w-3 h-3 md:w-3.5 md:h-3.5" />}
+                {index === 3 && <Settings size={10} className="text-gold animate-spin w-3 h-3 md:w-3.5 md:h-3.5" style={{ animationDuration: '6s' }} />}
+                <span className="font-mono text-[9px] md:text-xs tracking-wider font-semibold">{role}</span>
               </div>
             ))}
           </motion.div>
