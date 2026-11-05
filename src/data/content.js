@@ -101,11 +101,11 @@ export const siteConfig = {
     subtitle: "LỄ KHỞI CÔNG & MỞ BÁN DỰ ÁN ĐẲNG CẤP",
     description: "Đảm nhận vai trò MC dẫn dắt Lễ khởi công và Mở bán dự án Regal Residence (Regal Đồng Hới). Sự kiện thu hút hàng nghìn khách hàng và nhà đầu tư, đòi hỏi khả năng làm chủ sân khấu, truyền tải thông tin dự án chuyên nghiệp và chốt giao dịch sôi động.",
     images: [
-      "images/MC VQ Event/Regal Residence/regal-5.webp",
-      "images/MC VQ Event/Regal Residence/regal-2.webp",
-      "images/MC VQ Event/Regal Residence/regal-4.webp",
+      "images/MC VQ Event/Regal Residence/regal-1.webp",
       "images/MC VQ Event/Regal Residence/regal-3.webp",
-      "images/MC VQ Event/Regal Residence/regal-1.webp"
+      "images/MC VQ Event/Regal Residence/regal-4.webp",
+      "images/MC VQ Event/Regal Residence/regal-2.webp",
+      "images/MC VQ Event/Regal Residence/regal-5.webp"
     ]
   },
 
