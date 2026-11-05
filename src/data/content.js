@@ -16,12 +16,13 @@ export const siteConfig = {
   about: {
     title: "THÔNG TIN CHUNG",
     subtitle: "TẬN TÂM - CHUYÊN NGHIỆP - BÙNG NỔ",
-    shareTitle: "ĐỐI TÁC TIÊU BIỂU",
+    shareTitle: "CÁC ĐỐI TÁC TIÊU BIỂU",
     portrait: "images/optimized/about-portrait.webp",
     shareParagraphs: [
-      "Đồng hành dẫn dắt và bùng nổ năng lượng tại hơn 1000+ sân khấu sự kiện, gala dinner và lễ hội toàn quốc.",
-      "Đối tác tin cậy của hơn 500+ khách hàng, doanh nghiệp và tập đoàn kinh tế hàng đầu.",
-      "Hợp tác thành công cùng các đơn vị lớn: Sun Group, Techcombank, MIK Group, Masterise Homes, Cenland, Sixdo, Queen Land..."
+      "BẤT ĐỘNG SẢN: Vingroup, Sun Group, BRG Group, Masterise Homes, MIK Group, BIM Group, Tân Hoàng Minh, Regal Group, Cenland...",
+      "SỰ KIỆN DOANH NGHIỆP & TÀI CHÍNH: Techcombank, VietinBank, MB Bank, Agribank, Tập đoàn Thành Công (TC Group)...",
+      "THƯƠNG HIỆU & FASHION: Sixdo by Đỗ Mạnh Cường, VinFast, Ford, Queen Land...",
+      "BẢO HIỂM & TẬP ĐOÀN ĐA QUỐC GIA: FWD, AIA, Manulife, Chubb Life..."
     ],
     stats: [
       { label: "SÂN KHẤU", value: "1000+" },
