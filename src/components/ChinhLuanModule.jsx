@@ -89,7 +89,7 @@ export default function ChinhLuanModule() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 w-full"
+            className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6 w-full"
           >
             {images.map((img, idx) => (
               <motion.div
@@ -146,3 +146,4 @@ export default function ChinhLuanModule() {
     </section>
   );
 }
+
