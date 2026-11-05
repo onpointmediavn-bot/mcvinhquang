@@ -9,12 +9,12 @@ export default function PowerCore() {
   const [activeNode, setActiveNode] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
 
-  // Auto-cycle through the 4 stats / partner cards every 4 seconds when not hovered
+  // Auto-cycle through the 4 stats / partner cards every 2.2 seconds when not hovered
   useEffect(() => {
     if (isHovered) return;
     const interval = setInterval(() => {
       setActiveNode((prev) => (prev + 1) % 4);
-    }, 4000);
+    }, 2200);
     return () => clearInterval(interval);
   }, [isHovered]);
 
@@ -146,10 +146,10 @@ export default function PowerCore() {
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeNode}
-                    initial={{ opacity: 0, y: 8 }}
+                    initial={{ opacity: 0, y: 5 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -8 }}
-                    transition={{ duration: 0.35, ease: "easeOut" }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
                     className="space-y-2 md:space-y-3 w-full"
                   >
                     <div className="flex items-center justify-between">
@@ -174,7 +174,7 @@ export default function PowerCore() {
                     className="h-full bg-gold"
                     initial={{ width: "25%" }}
                     animate={{ width: `${(activeNode + 1) * 25}%` }}
-                    transition={{ duration: 0.5 }}
+                    transition={{ duration: 0.25 }}
                   />
                 </div>
                 <span className="font-mono text-[8px] md:text-[10px] text-gold/80 pl-2">
