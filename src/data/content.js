@@ -437,10 +437,11 @@ export const siteConfig = {
     title: "DIỄN GIẢ & THUYẾT TRÌNH BĐS",
     subtitle: "ĐÀO TẠO & PHÂN TÍCH CHUYÊN SÂU DỰ ÁN CAO CẤP",
     images: [
-      "images/placeholders/thuyet-trinh-1.webp",
-      "images/placeholders/thuyet-trinh-2.webp",
-      "images/placeholders/thuyet-trinh-3.webp",
-      "images/placeholders/thuyet-trinh-4.webp"
+      "images/thuyet-trinh/thuyet-trinh-1.webp",
+      "images/thuyet-trinh/thuyet-trinh-2.webp",
+      "images/thuyet-trinh/thuyet-trinh-3.webp",
+      "images/thuyet-trinh/thuyet-trinh-4.webp",
+      "images/thuyet-trinh/thuyet-trinh-5.webp"
     ]
   },
 

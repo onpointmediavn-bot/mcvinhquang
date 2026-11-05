@@ -89,46 +89,94 @@ export default function ThuyetTrinhModule() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: "-50px" }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-6 w-full"
+            className="flex flex-col gap-2 md:gap-6 w-full"
           >
-            {images.map((img, idx) => (
-              <motion.div
-                key={idx}
-                variants={itemVariants}
-                onClick={() => setSelectedImg(idx)}
-                className="relative overflow-hidden border border-charcoal bg-obsidian rounded-sm cursor-pointer group gold-glow-hover flex flex-col justify-between aspect-[4/3] md:aspect-[3/4]"
-              >
-                <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
-                <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
-                <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
-                <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+            {/* Top row: 3 photos */}
+            <div className="flex flex-row gap-2 md:gap-6 w-full items-stretch">
+              {images.slice(0, 3).map((img, idx) => (
+                <motion.div
+                  key={idx}
+                  variants={itemVariants}
+                  onClick={() => setSelectedImg(idx)}
+                  className="flex-1 w-0 relative overflow-hidden border border-charcoal bg-obsidian rounded-sm cursor-pointer group gold-glow-hover flex flex-col justify-between aspect-[4/3] md:aspect-auto md:h-[280px]"
+                >
+                  <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+                  <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+                  <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+                  <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
 
-                <div className="hidden md:flex p-3 border-b border-charcoal/80 bg-obsidian/60 justify-between items-center font-mono text-[8px] z-10 opacity-50 group-hover:opacity-100 transition-opacity">
-                  <span className="text-gold font-bold flex items-center gap-1 uppercase">
-                    <Terminal size={8} /> TT_FEED_0{idx + 1}
-                  </span>
-                  <span className="text-platinum/40 uppercase tracking-wider">KEYNOTE_PRO</span>
-                </div>
+                  <div className="hidden md:flex p-3 border-b border-charcoal/80 bg-obsidian/60 justify-between items-center font-mono text-[8px] z-10 opacity-50 group-hover:opacity-100 transition-opacity">
+                    <span className="text-gold font-bold flex items-center gap-1 uppercase">
+                      <Terminal size={8} /> TT_FEED_0{idx + 1}
+                    </span>
+                    <span className="text-platinum/40 uppercase tracking-wider">KEYNOTE_PRO</span>
+                  </div>
 
-                <div className="absolute inset-0 z-0">
-                  <img 
-                    src={`/${img}`} 
-                    alt={`Thuyết trình ${idx + 1}`}
-                    loading="lazy"
-                    decoding="async"
-                    className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian/30 opacity-80 group-hover:opacity-50 transition-opacity"></div>
-                </div>
+                  <div className="absolute inset-0 z-0">
+                    <img 
+                      src={`/${img}`} 
+                      alt={`Thuyết trình ${idx + 1}`}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian/30 opacity-70 group-hover:opacity-40 transition-opacity"></div>
+                  </div>
 
-                <div className="relative z-10 p-3 flex justify-between items-center bg-gradient-to-t from-obsidian/90 to-transparent pt-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                  <span className="font-mono text-[9px] text-platinum/50 flex items-center gap-1">
-                    <Eye size={10} className="text-gold animate-pulse" /> CLICK_TO_EXPAND
-                  </span>
-                  <Maximize2 size={10} className="text-gold" />
-                </div>
-              </motion.div>
-            ))}
+                  <div className="relative z-10 p-3 flex justify-between items-center bg-gradient-to-t from-obsidian/90 to-transparent pt-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <span className="font-mono text-[9px] text-platinum/50 flex items-center gap-1">
+                      <Eye size={10} className="text-gold animate-pulse" /> CLICK_TO_EXPAND
+                    </span>
+                    <Maximize2 size={10} className="text-gold" />
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Bottom row: 2 photos */}
+            <div className="flex flex-row gap-2 md:gap-6 w-full items-stretch">
+              {images.slice(3, 5).map((img, idx) => {
+                const actualIdx = idx + 3;
+                return (
+                  <motion.div
+                    key={actualIdx}
+                    variants={itemVariants}
+                    onClick={() => setSelectedImg(actualIdx)}
+                    className="flex-1 w-0 relative overflow-hidden border border-charcoal bg-obsidian rounded-sm cursor-pointer group gold-glow-hover flex flex-col justify-between aspect-[16/9] md:aspect-auto md:h-[280px]"
+                  >
+                    <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+                    <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+                    <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+                    <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
+
+                    <div className="hidden md:flex p-3 border-b border-charcoal/80 bg-obsidian/60 justify-between items-center font-mono text-[8px] z-10 opacity-50 group-hover:opacity-100 transition-opacity">
+                      <span className="text-gold font-bold flex items-center gap-1 uppercase">
+                        <Terminal size={8} /> TT_FEED_0{actualIdx + 1}
+                      </span>
+                      <span className="text-platinum/40 uppercase tracking-wider">KEYNOTE_PRO</span>
+                    </div>
+
+                    <div className="absolute inset-0 z-0">
+                      <img 
+                        src={`/${img}`} 
+                        alt={`Thuyết trình ${actualIdx + 1}`}
+                        loading="lazy"
+                        decoding="async"
+                        className="w-full h-full object-cover opacity-85 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-obsidian/30 opacity-70 group-hover:opacity-40 transition-opacity"></div>
+                    </div>
+
+                    <div className="relative z-10 p-3 flex justify-between items-center bg-gradient-to-t from-obsidian/90 to-transparent pt-8 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                      <span className="font-mono text-[9px] text-platinum/50 flex items-center gap-1">
+                        <Eye size={10} className="text-gold animate-pulse" /> CLICK_TO_EXPAND
+                      </span>
+                      <Maximize2 size={10} className="text-gold" />
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </motion.div>
         </div>
       </div>
@@ -146,3 +194,4 @@ export default function ThuyetTrinhModule() {
     </section>
   );
 }
+
