@@ -51,11 +51,10 @@ export default function MoreEventsModule() {
     const remainingCount = images.length - 5;
 
     return (
-      <motion.div
+      <div
         key={`${activeTab}-${idx}`}
-        variants={itemVariants}
         onClick={() => setSelectedImg(idx)}
-        className={`relative overflow-hidden border border-charcoal bg-obsidian rounded-sm cursor-pointer group gold-glow-hover flex flex-col justify-between ${gridClasses}`}
+        className={`relative overflow-hidden border border-charcoal bg-obsidian rounded-sm cursor-pointer group gold-glow-hover flex flex-col justify-between transition-all duration-300 ${gridClasses}`}
       >
         {/* HUD Bracket Corners */}
         <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-gold/30 group-hover:border-gold/80 transition-colors duration-500 z-10"></div>
@@ -115,7 +114,7 @@ export default function MoreEventsModule() {
             <Maximize2 size={10} className="text-gold" />
           </div>
         )}
-      </motion.div>
+      </div>
     );
   };
 
