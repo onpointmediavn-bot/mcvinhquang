@@ -281,33 +281,6 @@ export const siteConfig = {
 
   moreRealEstate: [
     {
-      id: "shoshin-binh-thanh",
-      title: "THUYẾT TRÌNH DỰ ÁN SHOSHIN BÌNH THANH",
-      subtitle: "ĐÀO TẠO & THUYẾT TRÌNH DỰ ÁN NGHỈ DƯỠNG CAO CẤP",
-      description: "Đảm nhận vai trò Diễn giả thuyết trình giới thiệu dự án nghỉ dưỡng Shoshin Bình Thanh. Truyền tải trọn vẹn concept thiết kế độc đáo, tiềm năng sinh lời vượt trội và giá trị sống thượng lưu đến hàng trăm khách hàng và chuyên viên kinh doanh.",
-      images: [
-        "images/more-real-estate/shoshin-binh-thanh/1.webp",
-        "images/more-real-estate/shoshin-binh-thanh/LP__5662.webp",
-        "images/more-real-estate/shoshin-binh-thanh/PT_02611.webp",
-        "images/more-real-estate/shoshin-binh-thanh/PT_02617.webp",
-        "images/more-real-estate/shoshin-binh-thanh/PT_02678.webp",
-        "images/more-real-estate/shoshin-binh-thanh/PT_02689.webp",
-        "images/more-real-estate/shoshin-binh-thanh/PT_02697.webp",
-        "images/more-real-estate/shoshin-binh-thanh/PT_02713.webp",
-        "images/more-real-estate/shoshin-binh-thanh/PT_03014.webp",
-        "images/more-real-estate/shoshin-binh-thanh/PT_03018.webp",
-        "images/more-real-estate/shoshin-binh-thanh/PT_03036.webp",
-        "images/more-real-estate/shoshin-binh-thanh/PT_03045.webp",
-        "images/more-real-estate/shoshin-binh-thanh/PT_03048.webp",
-        "images/more-real-estate/shoshin-binh-thanh/PT_03053.webp",
-        "images/more-real-estate/shoshin-binh-thanh/PT_03078.webp",
-        "images/more-real-estate/shoshin-binh-thanh/WPT_02575.webp",
-        "images/more-real-estate/shoshin-binh-thanh/wPT_02602.webp",
-        "images/more-real-estate/shoshin-binh-thanh/wPT_02721.webp",
-        "images/more-real-estate/shoshin-binh-thanh/wPT_02943.webp"
-      ]
-    },
-    {
       id: "toa-dam-cenland",
       title: "TỌA ĐÀM CHIA SẺ DỰ ÁN CENLAND",
       subtitle: "TALKSHOW CHUYÊN SÂU CÙNG CÁC CHUYÊN GIA",
