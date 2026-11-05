@@ -33,100 +33,48 @@ export default function VjReviewModule() {
           </p>
         </div>
 
-        {/* Showcase Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          {/* Left Column: Video Cinema Frame (7 cols) */}
-          <div className="lg:col-span-7 flex flex-col items-center">
-            <div
-              onClick={() => setIsVideoOpen(true)}
-              className="relative w-full aspect-video p-2 bg-graphite border border-charcoal flex items-center justify-center overflow-hidden gold-glow group cursor-pointer rounded-sm"
-            >
-              {/* Corner Sci-fi Brackets */}
-              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-gold/60 z-20"></div>
-              <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-gold/60 z-20"></div>
-              <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-gold/60 z-20"></div>
-              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-gold/60 z-20"></div>
+        {/* Centered Cinema Frame */}
+        <div className="flex flex-col items-center max-w-4xl mx-auto w-full">
+          <div
+            onClick={() => setIsVideoOpen(true)}
+            className="relative w-full aspect-video p-2 bg-graphite border border-charcoal flex items-center justify-center overflow-hidden gold-glow group cursor-pointer rounded-sm"
+          >
+            {/* Corner Sci-fi Brackets */}
+            <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-gold/60 z-20"></div>
+            <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-gold/60 z-20"></div>
+            <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-gold/60 z-20"></div>
+            <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-gold/60 z-20"></div>
 
-              {/* Status Indicator */}
-              <div className="absolute top-3 left-4 z-20 font-mono text-[9px] text-emerald-400 flex items-center gap-1.5 uppercase bg-obsidian/80 px-2 py-0.5 rounded border border-emerald-500/40">
-                <span className="inline-block w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-                <span>VJ STREAM // 4K ULTRA HD</span>
-              </div>
-
-              {/* Video Thumbnail Background */}
-              <div className="relative w-full h-full overflow-hidden border border-charcoal/60 bg-obsidian flex items-center justify-center">
-                <img
-                  src={data?.thumbnail || "https://img.youtube.com/vi/SUj-GF4Kdw0/hqdefault.jpg"}
-                  alt={data?.videoTitle || "VJ Review"}
-                  loading="lazy"
-                  decoding="async"
-                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-obsidian/30"></div>
-
-                {/* Glowing Play Button */}
-                <div className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-gold/90 text-obsidian flex items-center justify-center shadow-[0_0_35px_rgba(213,182,122,0.8)] group-hover:scale-110 group-hover:bg-gold transition-all duration-300 z-20">
-                  <Play size={26} fill="currentColor" className="ml-1" />
-                </div>
-
-                {/* Bottom CTA Tag */}
-                <div className="absolute bottom-3 inset-x-3 z-20 text-center">
-                  <span className="font-mono text-[10px] text-gold font-bold uppercase tracking-widest px-3 py-1.5 bg-obsidian/90 backdrop-blur-md border border-gold/40 rounded-sm inline-flex items-center gap-1.5 group-hover:bg-gold group-hover:text-obsidian transition-colors">
-                    <Video size={12} /> BẤM ĐỂ PHÁT CLIP REVIEW
-                  </span>
-                </div>
-              </div>
+            {/* Status Indicator */}
+            <div className="absolute top-3 left-4 z-20 font-mono text-[9px] text-emerald-400 flex items-center gap-1.5 uppercase bg-obsidian/80 px-2 py-0.5 rounded border border-emerald-500/40">
+              <span className="inline-block w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+              <span>VJ STREAM // 4K ULTRA HD</span>
             </div>
-          </div>
 
-          {/* Right Column: Highlights & Content Info (5 cols) */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-6">
-            <div className="metal-panel border border-charcoal bg-graphite/20 p-6 rounded-sm relative">
-              <div className="flex items-center gap-2 mb-3">
-                <Sparkles size={16} className="text-gold" />
-                <span className="font-mono text-xs text-gold uppercase tracking-wider font-bold">
-                  {data?.category || "DỰ ÁN TIÊU BIỂU"}
+            {/* Video Thumbnail Background */}
+            <div className="relative w-full h-full overflow-hidden border border-charcoal/60 bg-obsidian flex items-center justify-center">
+              <img
+                src={data?.thumbnail || "https://img.youtube.com/vi/SUj-GF4Kdw0/hqdefault.jpg"}
+                alt={data?.videoTitle || "VJ Review"}
+                loading="lazy"
+                decoding="async"
+                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-obsidian/30"></div>
+
+              {/* Glowing Play Button */}
+              <div className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-gold/90 text-obsidian flex items-center justify-center shadow-[0_0_35px_rgba(213,182,122,0.8)] group-hover:scale-110 group-hover:bg-gold transition-all duration-300 z-20">
+                <Play size={26} fill="currentColor" className="ml-1" />
+              </div>
+
+              {/* Bottom CTA Tag */}
+              <div className="absolute bottom-3 inset-x-3 z-20 text-center">
+                <span className="font-mono text-[10px] text-gold font-bold uppercase tracking-widest px-3 py-1.5 bg-obsidian/90 backdrop-blur-md border border-gold/40 rounded-sm inline-flex items-center gap-1.5 group-hover:bg-gold group-hover:text-obsidian transition-colors">
+                  <Video size={12} /> BẤM ĐỂ PHÁT CLIP REVIEW
                 </span>
               </div>
-
-              <h3 className="text-2xl font-black text-platinum tracking-tight uppercase mb-3">
-                {data?.videoTitle || "THÁI ĐÀO RESIDENCE"}
-              </h3>
-
-              <p className="text-platinum/75 text-xs sm:text-sm leading-relaxed mb-6 font-normal">
-                {data?.description || "Dẫn dắt và trực tiếp trải nghiệm thực tế dự án Thái Đào Residence. Truyền tải trọn vẹn không khí, phân tích hạ tầng quy hoạch và tiềm năng đầu tư bằng phong cách VJ hiện đại, sinh động và giàu sức thuyết phục."}
-              </p>
-
-              {/* Feature Points */}
-              <div className="space-y-3 pt-4 border-t border-charcoal/60 font-mono text-xs">
-                <div className="flex items-center gap-2.5 text-platinum/80">
-                  <CheckCircle2 size={14} className="text-gold shrink-0" />
-                  <span>Trải nghiệm thực tế tại hiện trường</span>
-                </div>
-                <div className="flex items-center gap-2.5 text-platinum/80">
-                  <CheckCircle2 size={14} className="text-gold shrink-0" />
-                  <span>Phân tích pháp lý & cơ hội sinh lời</span>
-                </div>
-                <div className="flex items-center gap-2.5 text-platinum/80">
-                  <CheckCircle2 size={14} className="text-gold shrink-0" />
-                  <span>Định dạng 16:9 chuẩn truyền hình & quảng bá</span>
-                </div>
-              </div>
-
-              {/* Action Button */}
-              <div className="mt-6 pt-4 border-t border-charcoal/60">
-                <button
-                  type="button"
-                  onClick={() => setIsVideoOpen(true)}
-                  className="w-full py-3 bg-gradient-to-r from-gold/90 via-gold to-gold/90 hover:from-gold hover:to-gold text-obsidian font-mono text-xs font-black uppercase tracking-wider rounded-sm flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(213,182,122,0.3)] transition-all cursor-pointer"
-                >
-                  <Play size={14} fill="currentColor" /> XEM VIDEO TRẢI NGHIỆM
-                </button>
-              </div>
             </div>
           </div>
-
         </div>
 
       </div>
@@ -181,3 +129,4 @@ export default function VjReviewModule() {
     </section>
   );
 }
+
