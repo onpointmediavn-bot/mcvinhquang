@@ -33,44 +33,49 @@ export default function VjReviewModule() {
           </p>
         </div>
 
-        {/* Centered Cinema Frame */}
-        <div className="flex flex-col items-center max-w-4xl mx-auto w-full">
+        {/* Centered Cinema Frame - Full Width Large Showcase */}
+        <div className="flex flex-col items-center max-w-6xl mx-auto w-full">
           <div
             onClick={() => setIsVideoOpen(true)}
-            className="relative w-full aspect-video p-2 bg-graphite border border-charcoal flex items-center justify-center overflow-hidden gold-glow group cursor-pointer rounded-sm"
+            className="relative w-full aspect-video md:aspect-[16/9] lg:aspect-[21/9] min-h-[300px] md:min-h-[460px] lg:min-h-[540px] p-2 md:p-3 bg-graphite border border-charcoal/90 flex items-center justify-center overflow-hidden gold-glow group cursor-pointer rounded-sm shadow-[0_0_50px_rgba(0,0,0,0.9)]"
           >
             {/* Corner Sci-fi Brackets */}
-            <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-gold/60 z-20"></div>
-            <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-gold/60 z-20"></div>
-            <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-gold/60 z-20"></div>
-            <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-gold/60 z-20"></div>
+            <div className="absolute top-0 left-0 w-4 h-4 md:w-6 md:h-6 border-t-2 border-l-2 border-gold/70 z-20"></div>
+            <div className="absolute top-0 right-0 w-4 h-4 md:w-6 md:h-6 border-t-2 border-r-2 border-gold/70 z-20"></div>
+            <div className="absolute bottom-0 left-0 w-4 h-4 md:w-6 md:h-6 border-b-2 border-l-2 border-gold/70 z-20"></div>
+            <div className="absolute bottom-0 right-0 w-4 h-4 md:w-6 md:h-6 border-b-2 border-r-2 border-gold/70 z-20"></div>
 
             {/* Status Indicator */}
-            <div className="absolute top-3 left-4 z-20 font-mono text-[9px] text-emerald-400 flex items-center gap-1.5 uppercase bg-obsidian/80 px-2 py-0.5 rounded border border-emerald-500/40">
+            <div className="absolute top-4 left-4 z-20 font-mono text-[9px] md:text-[10px] text-emerald-400 flex items-center gap-2 uppercase bg-obsidian/90 backdrop-blur-md px-3 py-1 rounded border border-emerald-500/40 shadow-lg">
               <span className="inline-block w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-              <span>VJ STREAM // 4K ULTRA HD</span>
+              <span className="tracking-widest font-bold">VJ_CINEMA // 4K ULTRA RESOLUTION</span>
+            </div>
+
+            {/* Top Right Duration Tag */}
+            <div className="absolute top-4 right-4 z-20 font-mono text-[9px] md:text-[10px] text-platinum/70 flex items-center gap-1.5 uppercase bg-obsidian/90 backdrop-blur-md px-3 py-1 rounded border border-charcoal shadow-lg">
+              <span>{data?.duration || "03:12"}</span>
             </div>
 
             {/* Video Thumbnail Background */}
             <div className="relative w-full h-full overflow-hidden border border-charcoal/60 bg-obsidian flex items-center justify-center">
               <img
-                src={data?.thumbnail || "https://img.youtube.com/vi/SUj-GF4Kdw0/hqdefault.jpg"}
+                src={`/${data?.thumbnail || "images/vj-review/thai-dao-thumb.webp"}`}
                 alt={data?.videoTitle || "VJ Review"}
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
+                className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-obsidian/90 via-transparent to-obsidian/30"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-obsidian/20 to-transparent opacity-80 group-hover:opacity-40 transition-opacity"></div>
 
               {/* Glowing Play Button */}
-              <div className="absolute inset-0 m-auto w-16 h-16 rounded-full bg-gold/90 text-obsidian flex items-center justify-center shadow-[0_0_35px_rgba(213,182,122,0.8)] group-hover:scale-110 group-hover:bg-gold transition-all duration-300 z-20">
-                <Play size={26} fill="currentColor" className="ml-1" />
+              <div className="absolute inset-0 m-auto w-16 h-16 md:w-24 md:h-24 rounded-full bg-gold/90 text-obsidian flex items-center justify-center shadow-[0_0_50px_rgba(213,182,122,0.9)] group-hover:scale-115 group-hover:bg-gold transition-all duration-300 z-20 cursor-pointer">
+                <Play size={32} fill="currentColor" className="ml-1 md:w-10 md:h-10 text-obsidian" />
               </div>
 
               {/* Bottom CTA Tag */}
-              <div className="absolute bottom-3 inset-x-3 z-20 text-center">
-                <span className="font-mono text-[10px] text-gold font-bold uppercase tracking-widest px-3 py-1.5 bg-obsidian/90 backdrop-blur-md border border-gold/40 rounded-sm inline-flex items-center gap-1.5 group-hover:bg-gold group-hover:text-obsidian transition-colors">
-                  <Video size={12} /> BẤM ĐỂ PHÁT CLIP REVIEW
+              <div className="absolute bottom-4 inset-x-4 z-20 text-center">
+                <span className="font-mono text-[10px] md:text-xs text-gold font-bold uppercase tracking-widest px-4 py-2 bg-obsidian/95 backdrop-blur-md border border-gold/50 rounded-sm inline-flex items-center gap-2 group-hover:bg-gold group-hover:text-obsidian transition-colors shadow-2xl">
+                  <Video size={14} /> BẤM VÀO ĐỂ PHÁT CLIP REVIEW (THÁI ĐÀO RESIDENCE)
                 </span>
               </div>
             </div>

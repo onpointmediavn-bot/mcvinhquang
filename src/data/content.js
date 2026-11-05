@@ -197,12 +197,10 @@ export const siteConfig = {
   vjReviewModule: {
     title: "VJ / REVIEW",
     subtitle: "KẾT NỐI NHÃN HÀNG VÀ KHÁCH HÀNG QUA GÓC NHÌN TRUYỀN THÔNG ĐẲNG CẤP",
-    category: "REVIEW DỰ ÁN BẤT ĐỘNG SẢN",
     videoTitle: "THÁI ĐÀO RESIDENCE",
     duration: "03:12",
-    thumbnail: "https://img.youtube.com/vi/SUj-GF4Kdw0/hqdefault.jpg",
-    videoUrl: "https://www.youtube.com/embed/SUj-GF4Kdw0",
-    description: "Dẫn dắt và trực tiếp trải nghiệm thực tế dự án Thái Đào Residence. Truyền tải trọn vẹn không khí, phân tích hạ tầng quy hoạch và tiềm năng đầu tư bằng phong cách VJ hiện đại, sinh động và giàu sức thuyết phục."
+    thumbnail: "images/vj-review/thai-dao-thumb.webp",
+    videoUrl: "https://www.youtube.com/embed/SUj-GF4Kdw0"
   },
 
 
