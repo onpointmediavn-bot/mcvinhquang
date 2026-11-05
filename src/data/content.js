@@ -281,6 +281,20 @@ export const siteConfig = {
 
   moreRealEstate: [
     {
+      id: "ramon-urbaniz",
+      title: "LỄ KHỞI CÔNG RAMON URBANIZ ĐỒ SƠN",
+      subtitle: "SỰ KIỆN KHỞI CÔNG DỰ ÁN TRỌNG ĐIỂM",
+      description: "Làm chủ sân khấu Lễ khởi công tổ hợp thương mại & nghỉ dưỡng Ramon Urbaniz tại Đồ Sơn. Sự kiện có sự góp mặt của lãnh đạo địa phương, chủ đầu tư và đối tác lớn, đòi hỏi nghi thức trang trọng và chuyên nghiệp.",
+      images: [
+        "images/more-real-estate/ramon-urbaniz/DJI_20251204142354_0052_D.webp",
+        "images/more-real-estate/ramon-urbaniz/N_P03255.webp",
+        "images/more-real-estate/ramon-urbaniz/N_P03262.webp",
+        "images/more-real-estate/ramon-urbaniz/N_P03352.webp",
+        "images/more-real-estate/ramon-urbaniz/N_P03599.webp",
+        "images/more-real-estate/ramon-urbaniz/N_P03636.webp"
+      ]
+    },
+    {
       id: "toa-dam-cenland",
       title: "TỌA ĐÀM CHIA SẺ DỰ ÁN CENLAND",
       subtitle: "TALKSHOW CHUYÊN SÂU CÙNG CÁC CHUYÊN GIA",
@@ -308,20 +322,6 @@ export const siteConfig = {
         "images/more-real-estate/sun-elite-city/6.webp",
         "images/more-real-estate/sun-elite-city/7.webp",
         "images/more-real-estate/sun-elite-city/NA_09491.webp"
-      ]
-    },
-    {
-      id: "ramon-urbaniz",
-      title: "LỄ KHỞI CÔNG RAMON URBANIZ ĐỒ SƠN",
-      subtitle: "SỰ KIỆN KHỞI CÔNG DỰ ÁN TRỌNG ĐIỂM",
-      description: "Làm chủ sân khấu Lễ khởi công tổ hợp thương mại & nghỉ dưỡng Ramon Urbaniz tại Đồ Sơn. Sự kiện có sự góp mặt của lãnh đạo địa phương, chủ đầu tư và đối tác lớn, đòi hỏi nghi thức trang trọng và chuyên nghiệp.",
-      images: [
-        "images/more-real-estate/ramon-urbaniz/DJI_20251204142354_0052_D.webp",
-        "images/more-real-estate/ramon-urbaniz/N_P03255.webp",
-        "images/more-real-estate/ramon-urbaniz/N_P03262.webp",
-        "images/more-real-estate/ramon-urbaniz/N_P03352.webp",
-        "images/more-real-estate/ramon-urbaniz/N_P03599.webp",
-        "images/more-real-estate/ramon-urbaniz/N_P03636.webp"
       ]
     },
     {
