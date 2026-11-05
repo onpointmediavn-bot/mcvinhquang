@@ -1,12 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Cpu, Zap, Star, Shield, Trophy } from "lucide-react";
 import { siteConfig } from "@/data/content";
 
 export default function PowerCore() {
   const [activeNode, setActiveNode] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  // Auto-cycle through the 4 stats / partner cards every 4 seconds when not hovered
+  useEffect(() => {
+    if (isHovered) return;
+    const interval = setInterval(() => {
+      setActiveNode((prev) => (prev + 1) % 4);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [isHovered]);
 
   // Map icons to the stats
   const icons = [
@@ -79,7 +89,11 @@ export default function PowerCore() {
           </div>
 
           {/* Right Column: Central Power Core HUD */}
-          <div className="flex-[8] lg:flex-[7] w-0 flex flex-col justify-center">
+          <div 
+            className="flex-[8] lg:flex-[7] w-0 flex flex-col justify-center"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             {/* The Telemetry Core Display */}
             <div className="grid grid-cols-2 gap-2 md:gap-6 mb-4 md:mb-10">
               {siteConfig.about.stats.map((stat, index) => {
@@ -132,16 +146,21 @@ export default function PowerCore() {
                 <AnimatePresence mode="wait">
                   <motion.div
                     key={activeNode}
-                    initial={{ opacity: 0, x: 10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -10 }}
-                    transition={{ duration: 0.4 }}
-                    className="space-y-2 md:space-y-4"
+                    initial={{ opacity: 0, y: 8 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -8 }}
+                    transition={{ duration: 0.35, ease: "easeOut" }}
+                    className="space-y-2 md:space-y-3 w-full"
                   >
-                    <h3 className="text-xs md:text-xl font-bold text-gold tracking-wide">
-                      {siteConfig.about.shareTitle}
-                    </h3>
-                    <p className="text-platinum/80 leading-relaxed text-[10px] md:text-base">
+                    <div className="flex items-center justify-between">
+                      <h3 className="text-xs md:text-lg font-bold text-gold tracking-wide">
+                        {siteConfig.about.shareTitle}
+                      </h3>
+                      <span className="font-mono text-[9px] text-platinum/40">
+                        {activeNode + 1} / {siteConfig.about.shareParagraphs.length}
+                      </span>
+                    </div>
+                    <p className="text-platinum/90 leading-relaxed text-xs md:text-base font-medium">
                       {siteConfig.about.shareParagraphs[activeNode] || siteConfig.about.shareParagraphs[0]}
                     </p>
                   </motion.div>
